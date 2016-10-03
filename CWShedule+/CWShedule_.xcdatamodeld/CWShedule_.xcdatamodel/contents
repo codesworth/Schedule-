@@ -1,4 +1,42 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11232" systemVersion="15F34" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="ScheduleDetails" representedClassName=".ScheduleDetails" syncable="YES">
+        <attribute name="sDExtraDetails" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="childSItems" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SheduleItem" inverseName="childSDetails" inverseEntity="SheduleItem" syncable="YES"/>
+    </entity>
+    <entity name="ScheduleImages" representedClassName=".ScheduleImages" syncable="YES">
+        <attribute name="sImages" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <relationship name="childSGroup" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SheduleGroup" inverseName="childSImages" inverseEntity="SheduleGroup" syncable="YES"/>
+    </entity>
+    <entity name="ScheduleUrgency" representedClassName=".ScheduleUrgency" syncable="YES">
+        <attribute name="sURepeat" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="sUSetReminder" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="sUUrgency" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="childSItems" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SheduleItem" inverseName="childSUrgency" inverseEntity="SheduleItem" syncable="YES"/>
+    </entity>
+    <entity name="SheduleGroup" representedClassName=".SheduleGroup" syncable="YES">
+        <attribute name="sGcreatedDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="sGName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="childSImages" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ScheduleImages" inverseName="childSGroup" inverseEntity="ScheduleImages" syncable="YES"/>
+        <relationship name="childSItems" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="SheduleItem" inverseName="childSGroup" inverseEntity="SheduleItem" syncable="YES"/>
+    </entity>
+    <entity name="SheduleItem" representedClassName=".SheduleItem" syncable="YES">
+        <attribute name="sIBeginDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="sIcreatedDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="sIEndDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="sIName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sItemChecked" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="sItemDuration" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sItemID" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="childSDetails" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ScheduleDetails" inverseName="childSItems" inverseEntity="ScheduleDetails" syncable="YES"/>
+        <relationship name="childSGroup" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SheduleGroup" inverseName="childSItems" inverseEntity="SheduleGroup" syncable="YES"/>
+        <relationship name="childSUrgency" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ScheduleUrgency" inverseName="childSItems" inverseEntity="ScheduleUrgency" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="ScheduleDetails" positionX="79" positionY="225" width="128" height="73"/>
+        <element name="ScheduleImages" positionX="-333" positionY="-99" width="128" height="73"/>
+        <element name="ScheduleUrgency" positionX="-378" positionY="201" width="128" height="103"/>
+        <element name="SheduleGroup" positionX="-162" positionY="-297" width="128" height="105"/>
+        <element name="SheduleItem" positionX="-153" positionY="15" width="128" height="195"/>
+    </elements>
 </model>

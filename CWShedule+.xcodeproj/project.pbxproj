@@ -7,14 +7,58 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C4089ECA1DA004BA00D4729F /* MGSwipeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C4089EC71DA004BA00D4729F /* MGSwipeButton.m */; };
+		C4089ECB1DA004BA00D4729F /* MGSwipeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C4089EC91DA004BA00D4729F /* MGSwipeTableCell.m */; };
+		C446BAA11D92924600EBF015 /* ScheduleItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C446BAA01D92924600EBF015 /* ScheduleItemCell.swift */; };
 		C4492DBE1D9151DE00CF5D7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4492DBD1D9151DE00CF5D7C /* AppDelegate.swift */; };
-		C4492DC01D9151DE00CF5D7C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4492DBF1D9151DE00CF5D7C /* ViewController.swift */; };
 		C4492DC31D9151DE00CF5D7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4492DC11D9151DE00CF5D7C /* Main.storyboard */; };
 		C4492DC61D9151DE00CF5D7C /* CWShedule_.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C4492DC41D9151DE00CF5D7C /* CWShedule_.xcdatamodeld */; };
 		C4492DC81D9151DE00CF5D7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4492DC71D9151DE00CF5D7C /* Assets.xcassets */; };
 		C4492DCB1D9151DE00CF5D7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4492DC91D9151DE00CF5D7C /* LaunchScreen.storyboard */; };
 		C4492DD61D9151DE00CF5D7C /* CWShedule_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4492DD51D9151DE00CF5D7C /* CWShedule_Tests.swift */; };
 		C4492DE11D9151DE00CF5D7C /* CWShedule_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4492DE01D9151DE00CF5D7C /* CWShedule_UITests.swift */; };
+		C4492DF41D9179CA00CF5D7C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4492DF31D9179CA00CF5D7C /* Constants.swift */; };
+		C4492DFF1D917AC900CF5D7C /* ScheduleDetails+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4492DF51D917AC900CF5D7C /* ScheduleDetails+CoreDataClass.swift */; };
+		C4492E001D917AC900CF5D7C /* ScheduleDetails+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4492DF61D917AC900CF5D7C /* ScheduleDetails+CoreDataProperties.swift */; };
+		C4492E011D917AC900CF5D7C /* SheduleGroup+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4492DF71D917AC900CF5D7C /* SheduleGroup+CoreDataClass.swift */; };
+		C4492E021D917AC900CF5D7C /* SheduleGroup+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4492DF81D917AC900CF5D7C /* SheduleGroup+CoreDataProperties.swift */; };
+		C4492E031D917AC900CF5D7C /* ScheduleImages+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4492DF91D917AC900CF5D7C /* ScheduleImages+CoreDataClass.swift */; };
+		C4492E041D917AC900CF5D7C /* ScheduleImages+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4492DFA1D917AC900CF5D7C /* ScheduleImages+CoreDataProperties.swift */; };
+		C4492E051D917AC900CF5D7C /* SheduleItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4492DFB1D917AC900CF5D7C /* SheduleItem+CoreDataClass.swift */; };
+		C4492E061D917AC900CF5D7C /* SheduleItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4492DFC1D917AC900CF5D7C /* SheduleItem+CoreDataProperties.swift */; };
+		C4492E071D917AC900CF5D7C /* ScheduleUrgency+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4492DFD1D917AC900CF5D7C /* ScheduleUrgency+CoreDataClass.swift */; };
+		C4492E081D917AC900CF5D7C /* ScheduleUrgency+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4492DFE1D917AC900CF5D7C /* ScheduleUrgency+CoreDataProperties.swift */; };
+		C4492E0A1D917B8400CF5D7C /* SheduleGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4492E091D917B8400CF5D7C /* SheduleGroupVC.swift */; };
+		C4492E1E1D91828100CF5D7C /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4492E0C1D91828100CF5D7C /* Roboto-Black.ttf */; };
+		C4492E1F1D91828100CF5D7C /* Roboto-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4492E0D1D91828100CF5D7C /* Roboto-BlackItalic.ttf */; };
+		C4492E201D91828100CF5D7C /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4492E0E1D91828100CF5D7C /* Roboto-Bold.ttf */; };
+		C4492E211D91828100CF5D7C /* Roboto-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4492E0F1D91828100CF5D7C /* Roboto-BoldItalic.ttf */; };
+		C4492E221D91828100CF5D7C /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4492E101D91828100CF5D7C /* Roboto-Italic.ttf */; };
+		C4492E231D91828100CF5D7C /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4492E111D91828100CF5D7C /* Roboto-Light.ttf */; };
+		C4492E241D91828100CF5D7C /* Roboto-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4492E121D91828100CF5D7C /* Roboto-LightItalic.ttf */; };
+		C4492E251D91828100CF5D7C /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4492E131D91828100CF5D7C /* Roboto-Medium.ttf */; };
+		C4492E261D91828100CF5D7C /* Roboto-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4492E141D91828100CF5D7C /* Roboto-MediumItalic.ttf */; };
+		C4492E271D91828100CF5D7C /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4492E151D91828100CF5D7C /* Roboto-Regular.ttf */; };
+		C4492E281D91828100CF5D7C /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4492E161D91828100CF5D7C /* Roboto-Thin.ttf */; };
+		C4492E291D91828100CF5D7C /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4492E171D91828100CF5D7C /* Roboto-ThinItalic.ttf */; };
+		C4492E2A1D91828100CF5D7C /* RobotoCondensed-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4492E181D91828100CF5D7C /* RobotoCondensed-Bold.ttf */; };
+		C4492E2B1D91828100CF5D7C /* RobotoCondensed-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4492E191D91828100CF5D7C /* RobotoCondensed-BoldItalic.ttf */; };
+		C4492E2C1D91828100CF5D7C /* RobotoCondensed-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4492E1A1D91828100CF5D7C /* RobotoCondensed-Italic.ttf */; };
+		C4492E2D1D91828100CF5D7C /* RobotoCondensed-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4492E1B1D91828100CF5D7C /* RobotoCondensed-Light.ttf */; };
+		C4492E2E1D91828100CF5D7C /* RobotoCondensed-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4492E1C1D91828100CF5D7C /* RobotoCondensed-LightItalic.ttf */; };
+		C4492E2F1D91828100CF5D7C /* RobotoCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4492E1D1D91828100CF5D7C /* RobotoCondensed-Regular.ttf */; };
+		C4492E311D91899100CF5D7C /* 18kwwrgcsrtvrjpg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C4492E301D91899100CF5D7C /* 18kwwrgcsrtvrjpg.jpg */; };
+		C4492E331D9193C500CF5D7C /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4492E321D9193C500CF5D7C /* DesignableView.swift */; };
+		C4492E351D9198AE00CF5D7C /* SheduleGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4492E341D9198AE00CF5D7C /* SheduleGroupCell.swift */; };
+		C4492E371D9221A200CF5D7C /* ScheduleGroupDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4492E361D9221A200CF5D7C /* ScheduleGroupDetail.swift */; };
+		C4492E3A1D925D1F00CF5D7C /* ScheduleItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4492E391D925D1F00CF5D7C /* ScheduleItemVC.swift */; };
+		C47FB7191D936C76007C601A /* AddScheduleItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47FB7181D936C76007C601A /* AddScheduleItemVC.swift */; };
+		C47FB71B1D93A5FF007C601A /* img.png in Resources */ = {isa = PBXBuildFile; fileRef = C47FB71A1D93A5FF007C601A /* img.png */; };
+		C47FB71F1D93C4AD007C601A /* BlurrableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47FB71E1D93C4AD007C601A /* BlurrableView.swift */; };
+		C47FB7211D94782B007C601A /* RepeatCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47FB7201D94782B007C601A /* RepeatCells.swift */; };
+		C4825BF31DA12BBE00D3FCE3 /* 1475380567_Tick_Mark.png in Resources */ = {isa = PBXBuildFile; fileRef = C4825BF21DA12BBE00D3FCE3 /* 1475380567_Tick_Mark.png */; };
+		C4F152531DA1465E00D6AB72 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F152521DA1465E00D6AB72 /* HomeVC.swift */; };
+		C4F152911DA1A76300D6AB72 /* UpcomingCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F152901DA1A76300D6AB72 /* UpcomingCells.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +79,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C4089EC51DA004B900D4729F /* CWShedule+-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CWShedule+-Bridging-Header.h"; sourceTree = "<group>"; };
+		C4089EC61DA004BA00D4729F /* MGSwipeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeButton.h; sourceTree = "<group>"; };
+		C4089EC71DA004BA00D4729F /* MGSwipeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeButton.m; sourceTree = "<group>"; };
+		C4089EC81DA004BA00D4729F /* MGSwipeTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeTableCell.h; sourceTree = "<group>"; };
+		C4089EC91DA004BA00D4729F /* MGSwipeTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeTableCell.m; sourceTree = "<group>"; };
+		C446BAA01D92924600EBF015 /* ScheduleItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleItemCell.swift; sourceTree = "<group>"; };
 		C4492DBA1D9151DE00CF5D7C /* CWShedule+.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CWShedule+.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4492DBD1D9151DE00CF5D7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C4492DBF1D9151DE00CF5D7C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C4492DC21D9151DE00CF5D7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C4492DC51D9151DE00CF5D7C /* CWShedule_.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CWShedule_.xcdatamodel; sourceTree = "<group>"; };
 		C4492DC71D9151DE00CF5D7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +98,48 @@
 		C4492DDC1D9151DE00CF5D7C /* CWShedule+UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CWShedule+UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4492DE01D9151DE00CF5D7C /* CWShedule_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CWShedule_UITests.swift; sourceTree = "<group>"; };
 		C4492DE21D9151DE00CF5D7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4492DF31D9179CA00CF5D7C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C4492DF51D917AC900CF5D7C /* ScheduleDetails+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ScheduleDetails+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C4492DF61D917AC900CF5D7C /* ScheduleDetails+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ScheduleDetails+CoreDataProperties.swift"; path = "../ScheduleDetails+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C4492DF71D917AC900CF5D7C /* SheduleGroup+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SheduleGroup+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C4492DF81D917AC900CF5D7C /* SheduleGroup+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SheduleGroup+CoreDataProperties.swift"; path = "../SheduleGroup+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C4492DF91D917AC900CF5D7C /* ScheduleImages+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ScheduleImages+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C4492DFA1D917AC900CF5D7C /* ScheduleImages+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ScheduleImages+CoreDataProperties.swift"; path = "../ScheduleImages+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C4492DFB1D917AC900CF5D7C /* SheduleItem+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SheduleItem+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C4492DFC1D917AC900CF5D7C /* SheduleItem+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SheduleItem+CoreDataProperties.swift"; path = "../SheduleItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C4492DFD1D917AC900CF5D7C /* ScheduleUrgency+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ScheduleUrgency+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C4492DFE1D917AC900CF5D7C /* ScheduleUrgency+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ScheduleUrgency+CoreDataProperties.swift"; path = "../ScheduleUrgency+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C4492E091D917B8400CF5D7C /* SheduleGroupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheduleGroupVC.swift; sourceTree = "<group>"; };
+		C4492E0C1D91828100CF5D7C /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
+		C4492E0D1D91828100CF5D7C /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BlackItalic.ttf"; sourceTree = "<group>"; };
+		C4492E0E1D91828100CF5D7C /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		C4492E0F1D91828100CF5D7C /* Roboto-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BoldItalic.ttf"; sourceTree = "<group>"; };
+		C4492E101D91828100CF5D7C /* Roboto-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Italic.ttf"; sourceTree = "<group>"; };
+		C4492E111D91828100CF5D7C /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
+		C4492E121D91828100CF5D7C /* Roboto-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-LightItalic.ttf"; sourceTree = "<group>"; };
+		C4492E131D91828100CF5D7C /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		C4492E141D91828100CF5D7C /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-MediumItalic.ttf"; sourceTree = "<group>"; };
+		C4492E151D91828100CF5D7C /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		C4492E161D91828100CF5D7C /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
+		C4492E171D91828100CF5D7C /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
+		C4492E181D91828100CF5D7C /* RobotoCondensed-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Bold.ttf"; sourceTree = "<group>"; };
+		C4492E191D91828100CF5D7C /* RobotoCondensed-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-BoldItalic.ttf"; sourceTree = "<group>"; };
+		C4492E1A1D91828100CF5D7C /* RobotoCondensed-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Italic.ttf"; sourceTree = "<group>"; };
+		C4492E1B1D91828100CF5D7C /* RobotoCondensed-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Light.ttf"; sourceTree = "<group>"; };
+		C4492E1C1D91828100CF5D7C /* RobotoCondensed-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-LightItalic.ttf"; sourceTree = "<group>"; };
+		C4492E1D1D91828100CF5D7C /* RobotoCondensed-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Regular.ttf"; sourceTree = "<group>"; };
+		C4492E301D91899100CF5D7C /* 18kwwrgcsrtvrjpg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 18kwwrgcsrtvrjpg.jpg; sourceTree = "<group>"; };
+		C4492E321D9193C500CF5D7C /* DesignableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
+		C4492E341D9198AE00CF5D7C /* SheduleGroupCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheduleGroupCell.swift; sourceTree = "<group>"; };
+		C4492E361D9221A200CF5D7C /* ScheduleGroupDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleGroupDetail.swift; sourceTree = "<group>"; };
+		C4492E391D925D1F00CF5D7C /* ScheduleItemVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleItemVC.swift; sourceTree = "<group>"; };
+		C47FB7181D936C76007C601A /* AddScheduleItemVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddScheduleItemVC.swift; sourceTree = "<group>"; };
+		C47FB71A1D93A5FF007C601A /* img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img.png; sourceTree = "<group>"; };
+		C47FB71E1D93C4AD007C601A /* BlurrableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurrableView.swift; sourceTree = "<group>"; };
+		C47FB7201D94782B007C601A /* RepeatCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepeatCells.swift; sourceTree = "<group>"; };
+		C4825BF21DA12BBE00D3FCE3 /* 1475380567_Tick_Mark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1475380567_Tick_Mark.png; sourceTree = "<group>"; };
+		C4F152521DA1465E00D6AB72 /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		C4F152901DA1A76300D6AB72 /* UpcomingCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpcomingCells.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,12 +190,19 @@
 		C4492DBC1D9151DE00CF5D7C /* CWShedule+ */ = {
 			isa = PBXGroup;
 			children = (
+				C4492DF01D91798700CF5D7C /* Model */,
+				C4492DEF1D91798300CF5D7C /* View */,
+				C4492DEE1D91797D00CF5D7C /* Controller */,
 				C4492DBD1D9151DE00CF5D7C /* AppDelegate.swift */,
-				C4492DBF1D9151DE00CF5D7C /* ViewController.swift */,
 				C4492DC11D9151DE00CF5D7C /* Main.storyboard */,
 				C4492DC71D9151DE00CF5D7C /* Assets.xcassets */,
+				C47FB71A1D93A5FF007C601A /* img.png */,
+				C4825BF21DA12BBE00D3FCE3 /* 1475380567_Tick_Mark.png */,
+				C4492E301D91899100CF5D7C /* 18kwwrgcsrtvrjpg.jpg */,
 				C4492DC91D9151DE00CF5D7C /* LaunchScreen.storyboard */,
+				C4492DF21D9179AD00CF5D7C /* Utils */,
 				C4492DCC1D9151DE00CF5D7C /* Info.plist */,
+				C4492DF11D9179A200CF5D7C /* Resources */,
 				C4492DC41D9151DE00CF5D7C /* CWShedule_.xcdatamodeld */,
 			);
 			path = "CWShedule+";
@@ -126,6 +224,95 @@
 				C4492DE21D9151DE00CF5D7C /* Info.plist */,
 			);
 			path = "CWShedule+UITests";
+			sourceTree = "<group>";
+		};
+		C4492DEE1D91797D00CF5D7C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C4492E091D917B8400CF5D7C /* SheduleGroupVC.swift */,
+				C4492E361D9221A200CF5D7C /* ScheduleGroupDetail.swift */,
+				C4492E391D925D1F00CF5D7C /* ScheduleItemVC.swift */,
+				C47FB7181D936C76007C601A /* AddScheduleItemVC.swift */,
+				C4F152521DA1465E00D6AB72 /* HomeVC.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		C4492DEF1D91798300CF5D7C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C4089EC61DA004BA00D4729F /* MGSwipeButton.h */,
+				C4089EC71DA004BA00D4729F /* MGSwipeButton.m */,
+				C4089EC81DA004BA00D4729F /* MGSwipeTableCell.h */,
+				C4089EC91DA004BA00D4729F /* MGSwipeTableCell.m */,
+				C4492E321D9193C500CF5D7C /* DesignableView.swift */,
+				C4492E341D9198AE00CF5D7C /* SheduleGroupCell.swift */,
+				C446BAA01D92924600EBF015 /* ScheduleItemCell.swift */,
+				C47FB71E1D93C4AD007C601A /* BlurrableView.swift */,
+				C47FB7201D94782B007C601A /* RepeatCells.swift */,
+				C4089EC51DA004B900D4729F /* CWShedule+-Bridging-Header.h */,
+				C4F152901DA1A76300D6AB72 /* UpcomingCells.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		C4492DF01D91798700CF5D7C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C4492DF61D917AC900CF5D7C /* ScheduleDetails+CoreDataProperties.swift */,
+				C4492DF81D917AC900CF5D7C /* SheduleGroup+CoreDataProperties.swift */,
+				C4492DFA1D917AC900CF5D7C /* ScheduleImages+CoreDataProperties.swift */,
+				C4492DFC1D917AC900CF5D7C /* SheduleItem+CoreDataProperties.swift */,
+				C4492DFE1D917AC900CF5D7C /* ScheduleUrgency+CoreDataProperties.swift */,
+				C4492E0B1D917BA600CF5D7C /* Generated */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		C4492DF11D9179A200CF5D7C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C4492E0C1D91828100CF5D7C /* Roboto-Black.ttf */,
+				C4492E0D1D91828100CF5D7C /* Roboto-BlackItalic.ttf */,
+				C4492E0E1D91828100CF5D7C /* Roboto-Bold.ttf */,
+				C4492E0F1D91828100CF5D7C /* Roboto-BoldItalic.ttf */,
+				C4492E101D91828100CF5D7C /* Roboto-Italic.ttf */,
+				C4492E111D91828100CF5D7C /* Roboto-Light.ttf */,
+				C4492E121D91828100CF5D7C /* Roboto-LightItalic.ttf */,
+				C4492E131D91828100CF5D7C /* Roboto-Medium.ttf */,
+				C4492E141D91828100CF5D7C /* Roboto-MediumItalic.ttf */,
+				C4492E151D91828100CF5D7C /* Roboto-Regular.ttf */,
+				C4492E161D91828100CF5D7C /* Roboto-Thin.ttf */,
+				C4492E171D91828100CF5D7C /* Roboto-ThinItalic.ttf */,
+				C4492E181D91828100CF5D7C /* RobotoCondensed-Bold.ttf */,
+				C4492E191D91828100CF5D7C /* RobotoCondensed-BoldItalic.ttf */,
+				C4492E1A1D91828100CF5D7C /* RobotoCondensed-Italic.ttf */,
+				C4492E1B1D91828100CF5D7C /* RobotoCondensed-Light.ttf */,
+				C4492E1C1D91828100CF5D7C /* RobotoCondensed-LightItalic.ttf */,
+				C4492E1D1D91828100CF5D7C /* RobotoCondensed-Regular.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		C4492DF21D9179AD00CF5D7C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C4492DF31D9179CA00CF5D7C /* Constants.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		C4492E0B1D917BA600CF5D7C /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				C4492DF51D917AC900CF5D7C /* ScheduleDetails+CoreDataClass.swift */,
+				C4492DF71D917AC900CF5D7C /* SheduleGroup+CoreDataClass.swift */,
+				C4492DF91D917AC900CF5D7C /* ScheduleImages+CoreDataClass.swift */,
+				C4492DFB1D917AC900CF5D7C /* SheduleItem+CoreDataClass.swift */,
+				C4492DFD1D917AC900CF5D7C /* ScheduleUrgency+CoreDataClass.swift */,
+			);
+			name = Generated;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +384,7 @@
 					C4492DB91D9151DE00CF5D7C = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = H6689YLYP3;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 					C4492DD01D9151DE00CF5D7C = {
@@ -238,9 +426,30 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4492E291D91828100CF5D7C /* Roboto-ThinItalic.ttf in Resources */,
+				C4492E281D91828100CF5D7C /* Roboto-Thin.ttf in Resources */,
+				C4492E2E1D91828100CF5D7C /* RobotoCondensed-LightItalic.ttf in Resources */,
+				C47FB71B1D93A5FF007C601A /* img.png in Resources */,
 				C4492DCB1D9151DE00CF5D7C /* LaunchScreen.storyboard in Resources */,
+				C4825BF31DA12BBE00D3FCE3 /* 1475380567_Tick_Mark.png in Resources */,
 				C4492DC81D9151DE00CF5D7C /* Assets.xcassets in Resources */,
+				C4492E311D91899100CF5D7C /* 18kwwrgcsrtvrjpg.jpg in Resources */,
+				C4492E2B1D91828100CF5D7C /* RobotoCondensed-BoldItalic.ttf in Resources */,
+				C4492E2C1D91828100CF5D7C /* RobotoCondensed-Italic.ttf in Resources */,
+				C4492E241D91828100CF5D7C /* Roboto-LightItalic.ttf in Resources */,
+				C4492E201D91828100CF5D7C /* Roboto-Bold.ttf in Resources */,
+				C4492E2F1D91828100CF5D7C /* RobotoCondensed-Regular.ttf in Resources */,
+				C4492E2D1D91828100CF5D7C /* RobotoCondensed-Light.ttf in Resources */,
+				C4492E261D91828100CF5D7C /* Roboto-MediumItalic.ttf in Resources */,
+				C4492E1F1D91828100CF5D7C /* Roboto-BlackItalic.ttf in Resources */,
 				C4492DC31D9151DE00CF5D7C /* Main.storyboard in Resources */,
+				C4492E221D91828100CF5D7C /* Roboto-Italic.ttf in Resources */,
+				C4492E2A1D91828100CF5D7C /* RobotoCondensed-Bold.ttf in Resources */,
+				C4492E211D91828100CF5D7C /* Roboto-BoldItalic.ttf in Resources */,
+				C4492E251D91828100CF5D7C /* Roboto-Medium.ttf in Resources */,
+				C4492E271D91828100CF5D7C /* Roboto-Regular.ttf in Resources */,
+				C4492E1E1D91828100CF5D7C /* Roboto-Black.ttf in Resources */,
+				C4492E231D91828100CF5D7C /* Roboto-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,9 +474,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4492E3A1D925D1F00CF5D7C /* ScheduleItemVC.swift in Sources */,
+				C4089ECB1DA004BA00D4729F /* MGSwipeTableCell.m in Sources */,
+				C4492E041D917AC900CF5D7C /* ScheduleImages+CoreDataProperties.swift in Sources */,
 				C4492DC61D9151DE00CF5D7C /* CWShedule_.xcdatamodeld in Sources */,
-				C4492DC01D9151DE00CF5D7C /* ViewController.swift in Sources */,
+				C4492E031D917AC900CF5D7C /* ScheduleImages+CoreDataClass.swift in Sources */,
+				C446BAA11D92924600EBF015 /* ScheduleItemCell.swift in Sources */,
+				C4089ECA1DA004BA00D4729F /* MGSwipeButton.m in Sources */,
+				C4492E071D917AC900CF5D7C /* ScheduleUrgency+CoreDataClass.swift in Sources */,
+				C4492E021D917AC900CF5D7C /* SheduleGroup+CoreDataProperties.swift in Sources */,
+				C4492E081D917AC900CF5D7C /* ScheduleUrgency+CoreDataProperties.swift in Sources */,
+				C4492E011D917AC900CF5D7C /* SheduleGroup+CoreDataClass.swift in Sources */,
 				C4492DBE1D9151DE00CF5D7C /* AppDelegate.swift in Sources */,
+				C4492E371D9221A200CF5D7C /* ScheduleGroupDetail.swift in Sources */,
+				C4492E351D9198AE00CF5D7C /* SheduleGroupCell.swift in Sources */,
+				C47FB7191D936C76007C601A /* AddScheduleItemVC.swift in Sources */,
+				C4492E331D9193C500CF5D7C /* DesignableView.swift in Sources */,
+				C4492E001D917AC900CF5D7C /* ScheduleDetails+CoreDataProperties.swift in Sources */,
+				C4492E0A1D917B8400CF5D7C /* SheduleGroupVC.swift in Sources */,
+				C47FB71F1D93C4AD007C601A /* BlurrableView.swift in Sources */,
+				C47FB7211D94782B007C601A /* RepeatCells.swift in Sources */,
+				C4492DFF1D917AC900CF5D7C /* ScheduleDetails+CoreDataClass.swift in Sources */,
+				C4F152531DA1465E00D6AB72 /* HomeVC.swift in Sources */,
+				C4492DF41D9179CA00CF5D7C /* Constants.swift in Sources */,
+				C4492E051D917AC900CF5D7C /* SheduleItem+CoreDataClass.swift in Sources */,
+				C4492E061D917AC900CF5D7C /* SheduleItem+CoreDataProperties.swift in Sources */,
+				C4F152911DA1A76300D6AB72 /* UpcomingCells.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,11 +651,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = H6689YLYP3;
 				INFOPLIST_FILE = "CWShedule+/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Codesworth.CWShedule-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CWShedule+/CWShedule+-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -432,11 +668,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = H6689YLYP3;
 				INFOPLIST_FILE = "CWShedule+/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Codesworth.CWShedule-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CWShedule+/CWShedule+-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -518,6 +757,7 @@
 				C4492DE71D9151DE00CF5D7C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C4492DE81D9151DE00CF5D7C /* Build configuration list for PBXNativeTarget "CWShedule+Tests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +766,7 @@
 				C4492DEA1D9151DE00CF5D7C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C4492DEB1D9151DE00CF5D7C /* Build configuration list for PBXNativeTarget "CWShedule+UITests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +775,7 @@
 				C4492DED1D9151DE00CF5D7C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

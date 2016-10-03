@@ -11,11 +11,17 @@ import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
 
     var window: UIWindow?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        UIApplication.shared.statusBarStyle = .lightContent
+        let navAppearance = UINavigationBar.appearance()
+        navAppearance.barTintColor = UIColor.black
+        navAppearance.tintColor = UIColor(red: 195/255, green: 195/255, blue: 195/255, alpha: 1)
+        navAppearance.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white]
         // Override point for customization after application launch.
         return true
     }
@@ -90,4 +96,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 }
+
+
+let appDelegate = UIApplication.shared.delegate as? AppDelegate
+
+
+let context = appDelegate?.persistentContainer.viewContext
+
 
