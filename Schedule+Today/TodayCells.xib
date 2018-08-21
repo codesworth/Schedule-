@@ -1,19 +1,65 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="TodayCells" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="TodayCells" rowHeight="60" id="KGk-i7-Jjw" customClass="TodayCells" customModule="CWShedule_" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="75"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <frame key="frameInset" width="320" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="74"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view clipsSubviews="YES" alpha="0.29999999999999999" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gfr-4U-ILe">
+                        <rect key="frame" x="8" y="4" width="304" height="66"/>
+                        <color key="backgroundColor" red="1" green="0.98101128472222221" blue="1" alpha="0.80136986301369861" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9V5-rv-3rf">
+                        <rect key="frame" x="16" y="4" width="296" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="tJY-bu-hHl"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.18526885453161104" green="0.18710319962598343" blue="0.18710319962598343" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bwM-lh-kVy">
+                        <rect key="frame" x="16" y="45" width="296" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="kZo-3L-55F"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.34438507081507874" green="0.34779482399146566" blue="0.34779482399146566" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="9V5-rv-3rf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="8" id="KXN-4Y-rCg"/>
+                    <constraint firstItem="bwM-lh-kVy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="8" id="L8f-84-eJN"/>
+                    <constraint firstItem="Gfr-4U-ILe" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="Ntn-yp-spA"/>
+                    <constraint firstItem="9V5-rv-3rf" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="Tip-B1-aVK"/>
+                    <constraint firstAttribute="bottom" secondItem="Gfr-4U-ILe" secondAttribute="bottom" constant="4" id="YkA-Xc-TKv"/>
+                    <constraint firstItem="9V5-rv-3rf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="e0L-E8-JPo"/>
+                    <constraint firstItem="Gfr-4U-ILe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="m8f-JR-Faq"/>
+                    <constraint firstAttribute="bottom" secondItem="bwM-lh-kVy" secondAttribute="bottom" constant="4" id="mYN-cn-OaG"/>
+                    <constraint firstAttribute="trailing" secondItem="Gfr-4U-ILe" secondAttribute="trailing" constant="8" id="ptH-9g-FID"/>
+                    <constraint firstItem="bwM-lh-kVy" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="roQ-hv-M5I"/>
+                </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" red="0.86335682477252984" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <connections>
+                <outlet property="dateLabel" destination="bwM-lh-kVy" id="sG4-th-PTm"/>
+                <outlet property="scheduleName" destination="9V5-rv-3rf" id="xaC-rK-rg9"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="69.5"/>
         </tableViewCell>
     </objects>
 </document>

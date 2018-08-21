@@ -24,6 +24,7 @@ typedef BOOL(^MGSwipeButtonCallback)(MGSwipeTableCell * sender);
 
 /** A width for the expanded buttons. Defaults to 0, which means sizeToFit will be called. */
 @property (nonatomic, assign) CGFloat buttonWidth;
+@property (nonatomic, strong,) NSString *title;
 
 /** 
  * Convenience static constructors

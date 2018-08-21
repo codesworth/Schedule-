@@ -12,24 +12,61 @@ class CWPageViewController: UIPageViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+      
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override var prefersStatusBarHidden: Bool{
+        return true
     }
-    */
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        let sub:NSArray = view.subviews as NSArray
+        var scroll:UIScrollView? = nil
+        var pagecontrol:UIPageControl? = nil
+        
+        for v in sub{
+            if v is UIScrollView {
+                scroll = v as? UIScrollView
+            }
+            else if v is UIPageControl{
+                pagecontrol = v as? UIPageControl
+            }
+        }
+        if scroll != nil && pagecontrol != nil{
+            scroll?.frame = UIScreen.main.bounds
+            view.bringSubview(toFront: pagecontrol!)
+        }
+    }
 
+}
+
+
+
+
+
+
+class TSPageViewController: UIPageViewController {
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        let subViews: NSArray = view.subviews as NSArray
+        var scrollView: UIScrollView? = nil
+        var pageControl: UIPageControl? = nil
+        
+        for view in subViews {
+            if (view as AnyObject) is (UIScrollView) {
+                scrollView = view as? UIScrollView
+            }
+            else if (view as AnyObject) is (UIPageControl) {
+                pageControl = view as? UIPageControl
+            }
+        }
+        
+        if (scrollView != nil && pageControl != nil) {
+            scrollView?.frame = view.bounds
+            view.bringSubview(toFront: pageControl!)
+        }
+    }
 }

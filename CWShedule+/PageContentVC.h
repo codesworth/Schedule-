@@ -10,4 +10,12 @@
 
 @interface PageContentVC : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundView;
+@property(weak, nonatomic) IBOutlet UILabel *titleLabel;
+
+
+@property NSUInteger pageIndex;
+@property NSString *titleText;
+@property NSString *imageFile;
+
 @end

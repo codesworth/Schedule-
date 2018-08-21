@@ -9,50 +9,64 @@
 import UIKit
 import CoreData
 
-class ScheduleGroupDetail: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+class ScheduleGroupDetail: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate, UITextFieldDelegate {
     
     
     var scheduleGroupToEdit:SheduleGroup!
     var imagePicker:UIImagePickerController!
+    var imageshows = false
     @IBOutlet weak var sGImageView: UIImageView!
     @IBOutlet weak var sGNameTextfield: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(boolSetter), name: NSNotification.Name(rawValue: "PicSet"), object: nil)
         sGImageView.contentMode = .scaleAspectFill
-        
+        sGNameTextfield.delegate = self
         imagePicker = UIImagePickerController()
         imagePicker.delegate = self
-        guard scheduleGroupToEdit == nil else {
+        if scheduleGroupToEdit != nil {
             loadSheduleGroupToEdit()
-            return
+            
+        }else{
+            sGImageView.image = UIImage(named: imageGuesser())
         }
-        appDelegate?.saveContext()
+        
+        CoreDataStack.saveContext()
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
 
     }
-
+    
+    func boolSetter(){
+        imageshows = true
+    }
     @IBAction func saveButtonPressed(_ sender:AnyObject){
-        let picture = ScheduleImages(context: context!)
-        picture.sImages = sGImageView.image
-        
-        var scheduleGroup:SheduleGroup
-        
-        if scheduleGroupToEdit == nil{
-            scheduleGroup = SheduleGroup(context: context!)
+        if sGNameTextfield.text?.characters.count != 0{
+            if imageshows{
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "Added"), object: nil)
+            }
+            let picture = ScheduleImages(context: context)
+            picture.sImages = sGImageView.image
+            
+            var scheduleGroup:SheduleGroup
+            
+            if scheduleGroupToEdit == nil{
+                scheduleGroup = SheduleGroup(context: context)
+            }else{
+                scheduleGroup = scheduleGroupToEdit
+            }
+            
+            if let name = sGNameTextfield.text, name != ""{
+                scheduleGroup.sGName = name.capitalized
+            }
+            scheduleGroup.childSImages = picture
+            CoreDataStack.saveContext()
+            _ = navigationController?.popViewController(animated: true)
         }else{
-            scheduleGroup = scheduleGroupToEdit
+            createAlert(title: "Group title", actionTitle: "Dismiss", message: "Please enter a schedule group name", controller: self, actionStyle: .default, onComplete: {})
         }
-        
-        if let name = sGNameTextfield.text, name != ""{
-            scheduleGroup.sGName = name
-        }
-        scheduleGroup.childSImages = picture
-        appDelegate?.saveContext()
-        _ = navigationController?.popViewController(animated: true)
     }
 
     @IBAction func sgGroupImageButtonSelectorPressed(_ sender: AnyObject) {
@@ -63,17 +77,17 @@ class ScheduleGroupDetail: UIViewController,UIImagePickerControllerDelegate,UINa
         }
         
         let action2 = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        let action3 = UIAlertAction(title: "Take Photo", style: .default) { (UIAlertAction) in
+        //let action3 = UIAlertAction(title: "Take Photo", style: .default) { (UIAlertAction) in
             //Implement phototaking
-        }
+        //}
         
-        let action4 = UIAlertAction(title: "Delete Photo", style: .destructive) { (UIAlertAction) in
-            //Remove currnt photo
+        let action4 = UIAlertAction(title: "Random", style: .default) { (UIAlertAction) in
+            let s = self.imageGuesser()
+            self.sGImageView.image = UIImage(named: s)
         }
 
         actionSheet.addAction(action2)
         actionSheet.addAction(action1)
-        actionSheet.addAction(action3)
         actionSheet.addAction(action4)
         present(actionSheet, animated: true, completion: nil)
     }
@@ -94,10 +108,16 @@ class ScheduleGroupDetail: UIViewController,UIImagePickerControllerDelegate,UINa
     }
     
     
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         view.endEditing(true)
+        return true
+    }
     
+    func imageGuesser()->String{
+        let list = ["architecture","boots", "calendar","work", "tech" ]
+        let i = arc4random_uniform(UInt32(list.count))
+        return list[Int(i)]
+        
     }
     
 }

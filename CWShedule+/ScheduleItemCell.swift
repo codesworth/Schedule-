@@ -15,12 +15,14 @@ class ScheduleItemCell:MGSwipeTableCell {
     @IBOutlet weak var sICheckmarkView: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        sICheckmarkView.contentMode = .scaleAspectFit
+        
     }
     
     func updateSItemUI(item:SheduleItem){
         sItemNameLabel.text = item.sIName
         sIDurationLabel.text = item.sItemDuration
+        configureCheck(checked: item.sItemChecked)
     }
     
     func configureCheck(checked:Bool){

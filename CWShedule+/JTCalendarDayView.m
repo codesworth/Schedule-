@@ -58,7 +58,7 @@
         _dotView = [UIView new];
         [self addSubview:_dotView];
         
-        _dotView.backgroundColor = [UIColor redColor];
+        _dotView.backgroundColor = [UIColor whiteColor];
         _dotView.hidden = YES;
 
         _dotView.layer.rasterizationScale = [UIScreen mainScreen].scale;
@@ -131,7 +131,12 @@
     }
     [dateFormatter setDateFormat:self.dayFormat];
 
-    _textLabel.text = [ dateFormatter stringFromDate:_date];       
+    _textLabel.text = [ dateFormatter stringFromDate:_date];
+    _dotView.hidden = YES;
+    _circleView.hidden = YES;
+    _dashView.hidden = YES;
+    self.layer.borderWidth = 0;
+    
     [_manager.delegateManager prepareDayView:self];
 }
 

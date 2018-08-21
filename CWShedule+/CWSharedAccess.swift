@@ -7,3 +7,15 @@
 //
 
 import Foundation
+
+class CWSharedAccess{
+    
+    private static let _shared = CWSharedAccess()
+    
+    static var shared:CWSharedAccess{
+        return _shared
+    }
+    
+    let cwSharedDefaults = UserDefaults(suiteName: "group.codesworth.CWSchedule-")
+    
+}

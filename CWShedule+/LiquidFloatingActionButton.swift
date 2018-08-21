@@ -28,10 +28,11 @@ public enum LiquidFloatingActionButtonAnimateStyle : Int {
 }
 
 @IBDesignable
+
 open class LiquidFloatingActionButton : UIView {
 
     fileprivate let internalRadiusRatio: CGFloat = 20.0 / 56.0
-    open var cellRadiusRatio: CGFloat      = 0.38
+    open var cellRadiusRatio: CGFloat      = 0.50//0.38
     open var animateStyle: LiquidFloatingActionButtonAnimateStyle = .up {
         didSet {
             baseView.animateStyle = animateStyle
@@ -371,12 +372,12 @@ class CircleLiquidBaseView : ActionBarBaseView {
         }
 
         if let firstCell = openingCells.first {
-            bigEngine?.push(circle: baseLiquid!, other: firstCell)
+            _ = bigEngine?.push(circle: baseLiquid!, other: firstCell)
         }
         for i in 1..<openingCells.count {
             let prev = openingCells[i - 1]
             let cell = openingCells[i]
-            engine?.push(circle: prev, other: cell)
+            _ = engine?.push(circle: prev, other: cell)
         }
         engine?.draw(parent: baseLiquid!)
         bigEngine?.draw(parent: baseLiquid!)

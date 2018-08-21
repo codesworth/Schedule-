@@ -12,32 +12,18 @@ import UserNotifications
 import UserNotificationsUI
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDelegate,iRateDelegate {
     
     var finishedFirstRun = false
     var window: UIWindow?
     let newwindow = UIWindow(frame: UIScreen.main.bounds)
-    
+    var u_int_act_count = 0
     var storyboard = UIStoryboard(name: "Main", bundle: nil)
     var  appIsSecured = false
-    
-    func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
-        appIsSecured = UserDefaults.standard.bool(forKey: __APP_SECURED__)
-        if appIsSecured{
-            //window?.rootViewController = nil
-            let rvc  = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: __STORY_ID_PASCODE__) as! PasscodeVC
-            newwindow.rootViewController = rvc
-            print(UIApplication.shared.keyWindow?.rootViewController?.description ?? "fddffdddfdf")
-            newwindow.makeKeyAndVisible()
-            
-        }
-        return true
-    }
+    var cw_Rater = iRate.sharedInstance()
+    var voicable = false
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
-
-
         
 
         self.setRootVC()
@@ -45,8 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
         UIApplication.shared.statusBarStyle = .lightContent
         let navAppearance = UINavigationBar.appearance()
         navAppearance.barTintColor = UIColor.black
-        //(red: 5/255/*195/255*/, green: 92/255/*195/255*/, blue: 91/255/*195/255*/, alpha: 1)
-        navAppearance.tintColor = UIColor.white//(red: 5/255/*195/255*/, green: 92/255/*195/255*/, blue: 91/255/*195/255*/, alpha: 1)
+        navAppearance.tintColor = UIColor.white
         navAppearance.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white]
         
         _ = UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { (granted, erorr) in
@@ -58,6 +43,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
         }
         configureUNUserNotifications()
         setpageControls()
+        cw_Rater?.delegate = self
+        iRate.sharedInstance().usesUntilPrompt = 8
         
         return true
     }
@@ -86,6 +73,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
     
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        if u_int_act_count == 0{
+            secureApp()
+            u_int_act_count += 1
+        }
+        
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
@@ -111,10 +103,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
     }
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         if response.actionIdentifier == ID_CWNOTIF_ACTION_MARK_COMPLTD__{
-            print("it is done Thank u")
             let itemID = response.notification.request.content.userInfo["itemID"] as! Int64
             let item = CoreService.service.performFetchwith(itemID: itemID)
-            print(item)
             item.sItemChecked = true
             CoreDataStack.saveContext()
             completionHandler()
@@ -122,9 +112,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
         else if response.actionIdentifier == ID_CWNOTIF_ACTION_SNOOZE{
             let itemID = response.notification.request.content.userInfo["itemID"] as! Int64
             let item = CoreService.service.performFetchwith(itemID: itemID)
-            print(item)
             ScheduleNotifications.notification.reScheduleNotification(item: item)
-            let ids = response.notification.request.content.userInfo
+            _ = response.notification.request.content.userInfo
             
             completionHandler()
         }else if response.actionIdentifier == ID_CWNOTIF_ACTION_RESCHED__{
@@ -173,6 +162,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
             self.window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "tutsVC")
             UserDefaults.standard.set(true, forKey: "firstRun")
         }
+    }
+    
+    func iRateUserDidDeclineToRateApp() {
+        cw_Rater?.remindPeriod = 7
+        cw_Rater?.remindLater()
     }
 }
 

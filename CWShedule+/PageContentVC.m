@@ -16,7 +16,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [super viewDidLoad];
+    self.backgroundView.image = [UIImage imageNamed:self.imageFile];
+    self.titleLabel.text = self.titleText;
+    self.backgroundView.contentMode = UIViewContentModeScaleAspectFill;
+    [self.backgroundView setClipsToBounds:YES];
 }
 
 - (void)didReceiveMemoryWarning {

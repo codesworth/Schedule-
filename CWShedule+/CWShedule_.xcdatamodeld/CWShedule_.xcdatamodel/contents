@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11232" systemVersion="15F34" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="16B2555" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="ScheduleDetails" representedClassName=".ScheduleDetails" syncable="YES">
         <attribute name="sDExtraDetails" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="childSItems" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SheduleItem" inverseName="childSDetails" inverseEntity="SheduleItem" syncable="YES"/>
@@ -21,6 +21,7 @@
         <relationship name="childSItems" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="SheduleItem" inverseName="childSGroup" inverseEntity="SheduleItem" syncable="YES"/>
     </entity>
     <entity name="SheduleItem" representedClassName=".SheduleItem" syncable="YES">
+        <attribute name="sCalenderID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="sIBeginDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="sIcreatedDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="sIEndDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
@@ -32,11 +33,17 @@
         <relationship name="childSGroup" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SheduleGroup" inverseName="childSItems" inverseEntity="SheduleGroup" syncable="YES"/>
         <relationship name="childSUrgency" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ScheduleUrgency" inverseName="childSItems" inverseEntity="ScheduleUrgency" syncable="YES"/>
     </entity>
+    <fetchRequest name="allItemFetch" entity="SheduleItem"/>
+    <fetchRequest name="fetchRequest" entity="SheduleItem"/>
+    <fetchRequest name="groupFetchrequest" entity="SheduleGroup"/>
+    <fetchRequest name="ItemFetch" entity="SheduleItem"/>
+    <fetchRequest name="NotifFetch" entity="SheduleItem"/>
+    <fetchRequest name="TodayFetch" entity="SheduleItem"/>
     <elements>
         <element name="ScheduleDetails" positionX="79" positionY="225" width="128" height="73"/>
         <element name="ScheduleImages" positionX="-333" positionY="-99" width="128" height="73"/>
         <element name="ScheduleUrgency" positionX="-378" positionY="201" width="128" height="103"/>
         <element name="SheduleGroup" positionX="-162" positionY="-297" width="128" height="105"/>
-        <element name="SheduleItem" positionX="-153" positionY="15" width="128" height="195"/>
+        <element name="SheduleItem" positionX="-153" positionY="15" width="128" height="210"/>
     </elements>
 </model>

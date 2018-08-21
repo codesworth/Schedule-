@@ -12,35 +12,50 @@ import CoreData
 class SheduleGroupVC: UIViewController, UITableViewDelegate,UITableViewDataSource, NSFetchedResultsControllerDelegate {
     
     var fetchedResultsController:NSFetchedResultsController<SheduleGroup>!
+    @IBOutlet weak var  imageView:UIImageView!
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        do {
-            try tryFetch()
-        } catch let error as NSError {
-            print("error : ", error.debugDescription)
-        }
-        //generateTestData()
+        
+
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        tryFetch()
+        if fetchedResultsController.fetchedObjects?.count == 0{
+            view.bringSubview(toFront: imageView)
+        }else{
+            view.bringSubview(toFront: tableView)
+        }
         tableView.reloadData()
-    }
 
+    }
+    
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        fetchedResultsController = nil
+    }
     
     //MARK: - COREDATA
     
-    func tryFetch() throws{
+    func tryFetch(){
         
         
         let fetchRequest:NSFetchRequest<SheduleGroup> = SheduleGroup.fetchRequest()
         let dateSorting = NSSortDescriptor(key: "sGcreatedDate", ascending: false)
         
         fetchRequest.sortDescriptors = [dateSorting]
-        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext:context!, sectionNameKeyPath: nil, cacheName: nil)
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext:context, sectionNameKeyPath: nil, cacheName: nil)
         fetchedResultsController.delegate = self
         
         do{
@@ -98,6 +113,11 @@ class SheduleGroupVC: UIViewController, UITableViewDelegate,UITableViewDataSourc
         cell.updateSGCellUI(sheduleGroup: scheduleGroup)
     }
     
+    @IBAction func homeButtonPressed(_ sender: AnyObject) {
+        self.dismiss(animated: true) { 
+            //Do further call backs here after dismissing view
+        }
+    }
     
     
     
@@ -147,17 +167,21 @@ class SheduleGroupVC: UIViewController, UITableViewDelegate,UITableViewDataSourc
             self.performSegue(withIdentifier: SEGUE_EDIT_SG, sender: scheduleGroup)
         }
         
-        let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "Trash") { (action, indexPath) in
             let scheduleGroup = self.fetchedResultsController.object(at: indexPath)
-            context?.delete(scheduleGroup)
-            appDelegate?.saveContext()
-            
+            let deletable = UserDefaults.standard.bool(forKey: KEY_SCHDSG_AUTODELETE_)
+            if  deletable{self.deleteGroupItems(group: scheduleGroup)}
+            context.delete(scheduleGroup)
+            CoreDataStack.saveContext()
+
             tableView.reloadData()
             
         }
+        
         editAction.backgroundColor = UIColor(red: 85/255, green: 85/255, blue: 85/255, alpha: 0.9)
         deleteAction.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7)
-        return [editAction,deleteAction]
+        
+        return [deleteAction,editAction]
     }
     
     
@@ -179,25 +203,18 @@ class SheduleGroupVC: UIViewController, UITableViewDelegate,UITableViewDataSourc
         }
     }
     
-    
-    func generateTestData(){
-        let sg1 = SheduleGroup(context: context!)
-        sg1.sGName = "Recreational"
-        let sg2 = SheduleGroup(context: context!)
-        sg2.sGName = "Projects"
-        let sg3 = SheduleGroup(context: context!)
-        sg3.sGName = "Work"
-        let sg4 = SheduleGroup(context: context!)
-        sg4.sGName = "Chores Ashley"
-        let sg5 = SheduleGroup(context: context!)
-        sg5.sGName = "Family"
-        let sg6 = SheduleGroup(context: context!)
-        sg6.sGName = "Home"
-        let sg7 = SheduleGroup(context: context!)
-        sg7.sGName = "Miscellaneous"
-        appDelegate?.saveContext()
+    func deleteGroupItems(group:SheduleGroup){
+        var children:[SheduleItem] = []
         
+        for item in group.childSItems! {
+            children.append(item as! SheduleItem)
+        }
+        if !children.isEmpty{
+            for child in children{context.delete(child)}
+            //CoreDataStack.saveContext()
+        }
         
     }
+    
 
 }

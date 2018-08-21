@@ -14,13 +14,13 @@ import UIKit
 public extension UIDevice {
 	
 	/// Returns the `DeviceType` of the device in use
-	public var deviceType: DeviceType {
-		return DeviceType.current
+	public var __deviceType: AAPLDeviceType {
+		return AAPLDeviceType.current
 	}
 }
 
 /// Enum representing the different types of iOS devices available
-public enum DeviceType: String, EnumProtocol {
+public enum AAPLDeviceType: String, EnumProtocol {
 	case iPhone2G
 	case iPhone3G
 	case iPhone3GS
@@ -64,7 +64,7 @@ public enum DeviceType: String, EnumProtocol {
 	// MARK: Constants
 	
 	/// Returns the current device type
-	public static var current: DeviceType {
+	public static var current: AAPLDeviceType {
 		
 		var systemInfo = utsname()
 		uname(&systemInfo)
@@ -79,7 +79,7 @@ public enum DeviceType: String, EnumProtocol {
 			}
 		}
 		
-		return DeviceType(identifier: identifier)
+		return AAPLDeviceType(identifier: identifier)
 	}
 	
 	// MARK: Variables
@@ -176,7 +176,7 @@ public enum DeviceType: String, EnumProtocol {
 	*/
 	internal init(identifier: String) {
 		
-		for device in DeviceType.all {
+		for device in AAPLDeviceType.all {
 			for deviceId in device.identifiers {
 				guard identifier == deviceId else { continue }
 				self = device

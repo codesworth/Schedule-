@@ -25,6 +25,7 @@ class SheduleGroupCell: UITableViewCell {
     func updateSGCellUI(sheduleGroup:SheduleGroup){
         scheduleGroupName.text = sheduleGroup.sGName
         sheduleGroupImageView.image = sheduleGroup.childSImages?.sImages as? UIImage
+        sheduleItemRemaining.text = "\((sheduleGroup.childSItems?.count)!) ITEMS"
     }
 
 }

@@ -8,36 +8,41 @@
 
 import UIKit
 import Speech
-class ViewController: UIViewController, SFSpeechRecognizerDelegate {
+
+class CWSpeechToText: NSObject, SFSpeechRecognizerDelegate {
     
-    private var speechRecognizer = SFSpeechRecognizer(locale:Locale.init(identifier: "en-US"))
+    private static let _speechService = CWSpeechToText()
+    
+    static var speechService:CWSpeechToText{
+        return _speechService
+    }
+    
+    var speechRecognizer = SFSpeechRecognizer(locale:Locale.init(identifier: "en-US"))
     private var recognitionRequest:SFSpeechAudioBufferRecognitionRequest?
     private var recognitiontask:SFSpeechRecognitionTask?
     private let audioEngine = AVAudioEngine()
     
-    @IBOutlet weak var recordButton: MaterialButtons!
-    @IBOutlet weak var speectToTextField: MaterialTextField!
-    @IBOutlet weak var welcomeAddressLabel: UILabel!
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        speechRecognizer?.delegate = self
-        speechRecognize()
-    }
 
-    @IBAction func microphoneTapped(_ sender: AnyObject) {
+    var speechToText:String!
+
+
+    func microphoneTapped(recordButton:UIButton, textView:UILabel, didComplete:@escaping ExecuteAfterFinish) {
         if audioEngine.isRunning{
             audioEngine.stop()
             recognitionRequest?.endAudio()
             recordButton.isEnabled = false
             recordButton.setTitle("Start Recording", for: .normal)
         }else{
-            startRecording()
+            startRecording(recordButton: recordButton, speechTextView: textView, onComplete: { 
+                didComplete()
+                print("Lord Of the Closures")
+            })
             recordButton.setTitle("Stop Recording", for: .normal)
         }
         
     }
     
-    func speechRecognize(){
+    func speechRecognize(recordButton:UIButton){
         recordButton.isEnabled = false
         SFSpeechRecognizer.requestAuthorization({authStatus in
         var isButtonEnabled = false
@@ -54,7 +59,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
                 print("Speech Recognition not yet authorized on device")
             }
             OperationQueue.main.addOperation {
-                self.recordButton.isEnabled = isButtonEnabled
+                recordButton.isEnabled = isButtonEnabled
             }
         
         
@@ -71,7 +76,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
          */
     }
     
-    func startRecording(){
+    func startRecording(recordButton:UIButton, speechTextView:UILabel, onComplete:@escaping ExecuteAfterFinish){
         if recognitiontask != nil{
             recognitiontask?.cancel()
             recognitiontask = nil
@@ -96,23 +101,25 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
             fatalError("Unable to create an SFSpeechAudioBufferRecognitionRequest object")
         }
         
-        recognitionRequest.shouldReportPartialResults = true
+        recognitionRequest.shouldReportPartialResults = false
         recognitiontask = speechRecognizer?.recognitionTask(with: recognitionRequest, resultHandler: {(result , error) in
                 var isFinal = false
             if result != nil{
-                self.speectToTextField.text = result?.bestTranscription.formattedString
+                self.speechToText = result?.bestTranscription.formattedString
+                //grab the results here
                 isFinal = (result?.isFinal)!
+                print(self.speechToText)
             }
-            
+
             if error != nil || isFinal {
                 self.audioEngine.stop()
                 inputNode.removeTap(onBus: 0)
                 self.recognitiontask = nil
                 self.recognitionRequest = nil
                 
-                self.recordButton.isEnabled = true
+                recordButton.isEnabled = true
             }
-        
+            onComplete()
         
         })
         
@@ -128,8 +135,8 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         }catch{
             print("audioEngine couldnt start")
         }
-        
-        speectToTextField.text = "Say something, I'm listening"
+        //print(speechToText)
+        speechTextView.text = "Say something, I'm listening"
         
         //Created By SHADRACH MENSAH
         //CODESWORTH
@@ -163,7 +170,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     }
     
     
-    func speechRecognizer(_ speechRecognizer: SFSpeechRecognizer, availabilityDidChange available: Bool) {
+    /*func speechRecognizer(_ speechRecognizer: SFSpeechRecognizer, availabilityDidChange available: Bool) {
         if available{
             recordButton.isEnabled = true
         }else{
@@ -171,7 +178,7 @@ class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         }
         
         /* This method will be called when the availability changes. If speech recognition is available, the record button will also be enabled. */
-    }
+    }*/
 
 
     

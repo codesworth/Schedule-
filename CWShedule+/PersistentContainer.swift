@@ -12,7 +12,7 @@ import CoreData
 class PersistentContainer: NSPersistentContainer {
     
     override class func defaultDirectoryURL() -> URL{
-        return FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.Codesworth.CWShedule-")!
+        return FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.codesworth.CWSchedule-")!
     }
     
     override init(name: String, managedObjectModel model: NSManagedObjectModel) {

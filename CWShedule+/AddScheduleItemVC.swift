@@ -1,3 +1,4 @@
+
 //
 //  AddScheduleItemVC.swift
 //  CWShedule+
@@ -8,10 +9,17 @@
 
 import UIKit
 
-class AddScheduleItemVC: UIViewController,UITextFieldDelegate,UITableViewDelegate,UITableViewDataSource {
+class AddScheduleItemVC: UIViewController,UITextFieldDelegate,UITableViewDelegate,UITableViewDataSource,UITextViewDelegate {
 
-
+    //MARK: - IBOUTLETS
     @IBOutlet weak var repeatButton: UIButton!
+    
+    @IBOutlet weak var schedcon: NSLayoutConstraint!
+    @IBOutlet weak var datecon: NSLayoutConstraint!
+    @IBOutlet weak var notetopcon2: NSLayoutConstraint!
+    @IBOutlet weak var notetopcon: NSLayoutConstraint!
+    @IBOutlet weak var notesbotcon: NSLayoutConstraint!
+    @IBOutlet weak var selectGroupButton: UIButton!
     @IBOutlet var tableView: UITableView!
     @IBOutlet weak var sItemImageView: UIImageView!
     @IBOutlet weak var sheduleItemTextfield: UITextField!
@@ -21,16 +29,24 @@ class AddScheduleItemVC: UIViewController,UITextFieldDelegate,UITableViewDelegat
     @IBOutlet weak var urgencySegment: UISegmentedControl!
     @IBOutlet weak var endDateView: UIView!
     @IBOutlet weak var startDateView: UIView!
-
     @IBOutlet weak var addedNotesTextView: UITextView!
     @IBOutlet var datePicker: UIDatePicker!
+    @IBOutlet weak var repeatView: UIView!
+    @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var stackheight:NSLayoutConstraint!
+    @IBOutlet weak var dateStackView: UIStackView!
+    //MARK: - CLASS PROPERTIES
+    
+    @IBOutlet weak var groupview: UIView!
     var startTextFieldIsFirstResponder = false
-    var accessoryValue:Int64! = 4
+    var accessoryValue:Int64!
     var beginDate:Date!
     var endedDate:Date!
     var repeatArray = [String]()
-    var group:SheduleGroup!
+    var group:SheduleGroup?
     var sheduleItemToEdit:SheduleItem!
+    var selectedDate:NSDate!
+    var isFromCalView = false
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,21 +55,51 @@ class AddScheduleItemVC: UIViewController,UITextFieldDelegate,UITableViewDelegat
         tableView.dataSource = self
         startDate.delegate = self
         endDate.delegate = self
-        datePicker.addTarget(self, action: #selector(datePickerValueChanged(datePicker:)), for:UIControlEvents.valueChanged )
-        repeatArray = ["Hourly", "Daily", "Monthly", "Annually", "Never"]
-        addedNotesTextView.layer.cornerRadius = 20
+        sheduleItemTextfield.delegate = self
+        addedNotesTextView.delegate = self
         
-        guard sheduleItemToEdit == nil else{
+        NotificationCenter.default.addObserver(self, selector: #selector(createAndHoldScheduleGroup(notification:)), name: NSNotification.Name(rawValue: NOTIF_GROUP_SELECTED), object: nil)
+        configUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        tableView.reloadData()
+        
+        if isFromCalView && sheduleItemToEdit == nil{
+            beginDate = selectedDate as Date!
+            startDate.text = beginDate.formatDate()
+            datePicker.setDate(selectedDate as Date!, animated: true)
+        }
+        if sheduleItemToEdit != nil{
             loadScheduleItemToEdit()
             self.title = "Schedule Details"
-            return
         }
-        sItemImageView.image = group.childSImages?.sImages as? UIImage
+        
+        if group != nil || sheduleItemToEdit != nil{
+            selectGroupButton.setTitle(group?.sGName! ?? sheduleItemToEdit.childSGroup?.sGName, for: .normal)
+            selectGroupButton.tintColor = UIColor.black
+        }
+        
+    }
+    
+    func createAndHoldScheduleGroup(notification:Notification){
+        let new = notification.userInfo?["Group"] as! SheduleGroup
+        group = new
     }
     
     
+    func datePickerDonePressed(){
+
+        view.endEditing(true)
+    }
     
-    
+    func ended(){
+        self.datecon.constant += 19
+        self.schedcon.constant += 59
+        view.endEditing(true)
+
+    }
     
     
     func datePickerValueChanged(datePicker:UIDatePicker){
@@ -63,9 +109,18 @@ class AddScheduleItemVC: UIViewController,UITextFieldDelegate,UITableViewDelegat
         }else{
             endedDate = datePicker.date
             endDate.text = endedDate.formatDate()
+            
         }
     }
     
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+
+        self.datecon.constant -= 19
+        self.schedcon.constant -= 59
+        
+
+    }
 
     
     
@@ -99,37 +154,33 @@ class AddScheduleItemVC: UIViewController,UITextFieldDelegate,UITableViewDelegat
         var urgency:ScheduleUrgency
         var details: ScheduleDetails
         if sheduleItemToEdit == nil{
-             item = SheduleItem(context: context!)
-            urgency = ScheduleUrgency(context: context!)
-            details = ScheduleDetails(context: context!)
+             item = SheduleItem(context: context)
+            urgency = ScheduleUrgency(context: context)
+            details = ScheduleDetails(context: context)
             
             if let itemTitle = sheduleItemTextfield.text, itemTitle != "" {
                 
-                item.sIName = itemTitle
+                item.sIName = itemTitle.capitalized
                 urgency.sUSetReminder = shouldRemindSwitch.isOn
                 item.childSUrgency = urgency
-                print(item.childSUrgency?.sUSetReminder)
+                if accessoryValue == nil{
+                    urgency.sURepeat = 5
+                }else{
+                    urgency.sURepeat = accessoryValue
+                }
                 configUrgencySegment(item: item, urgency: urgency)
-                print("the urgency is class :",item.childSUrgency?.sUUrgency)
-                urgency.sURepeat = accessoryValue!
                 item.childSUrgency = urgency
-                //print("[\(item.childSUrgency?.sURepeat), \(accessoryValue)]")
-                //print("to be repeated ", item.childSUrgency?.sURepeat)
                 configureDuration(item: item)
                 details.sDExtraDetails = addedNotesTextView.text
                 item.childSDetails = details
-                //print(item.childSDetails?.sDExtraDetails)
-                let groups = group.childSItems?.mutableCopy() as! NSMutableOrderedSet
-                groups.add(item)
-                group.childSItems = groups.copy() as? NSOrderedSet
-                appDelegate?.saveContext()
-                print(item.childSDetails?.sDExtraDetails)
-                print("the urgency is class :",(item.childSUrgency?.sUUrgency)!)
-                print("to be repeated :",(item.childSUrgency?.sUSetReminder)!)
-                print(item.childSUrgency?.sURepeat)
-                print(item.childSUrgency?.sUSetReminder)
-                print(item.childSUrgency?.sUUrgency)
-                
+                if group != nil{
+                    let groups = group?.childSItems?.mutableCopy() as! NSMutableOrderedSet
+                    groups.add(item)
+                    group?.childSItems = groups.copy() as? NSOrderedSet
+                }else{
+                    
+                }
+                CoreDataStack.saveContext()
             }
 
         }
@@ -141,27 +192,28 @@ class AddScheduleItemVC: UIViewController,UITextFieldDelegate,UITableViewDelegat
             item.sIName = sheduleItemTextfield.text
             urgency.sUSetReminder = shouldRemindSwitch.isOn
             item.childSUrgency = urgency
-            print(item.childSUrgency?.sUSetReminder)
             configUrgencySegment(item: item, urgency: urgency)
-            print("the urgency is class :",item.childSUrgency?.sUUrgency)
             urgency.sURepeat = accessoryValue!
             item.childSUrgency = urgency
             configureDuration(item: item)
             details.sDExtraDetails = addedNotesTextView.text
             item.childSDetails = details
-            appDelegate?.saveContext()
+            CoreDataStack.saveContext()
 
         }
         
             }
     
+    
     func configureDuration(item:SheduleItem){
         
         if beginDate != nil  {
             item.sIBeginDate = beginDate as NSDate
-    
+            ScheduleNotifications.notification.shouldScheduleNotification(item: item)
+            item.sCalenderID = "\(dateDayFormat(date: (self.beginDate)! as NSDate)) 00:00:00 +0000"
         }else{
             item.sIBeginDate = nil
+            item.sCalenderID = ""
         }
         
         if  endedDate != nil {
@@ -182,7 +234,7 @@ class AddScheduleItemVC: UIViewController,UITextFieldDelegate,UITableViewDelegat
             item.sItemDuration = "Ending  \(endedDate.dateFormat())"
         }
         else{
-            item.sItemDuration = "No Duration Set"
+            item.sItemDuration = DURATION_SCHEDULE_ITEM__DEFAULT
         }
     }
     
@@ -197,8 +249,7 @@ class AddScheduleItemVC: UIViewController,UITextFieldDelegate,UITableViewDelegat
             urgency.sUUrgency = 3
             item.childSUrgency = urgency
         }
-        print(urgency.sUUrgency)
-        appDelegate?.saveContext()
+        CoreDataStack.saveContext()
         
     }
     
@@ -212,7 +263,9 @@ class AddScheduleItemVC: UIViewController,UITextFieldDelegate,UITableViewDelegat
             addedNotesTextView.text = item.childSDetails?.sDExtraDetails
             startDate.text = (item.sIBeginDate as? Date)?.formatDate()
             endDate.text = (item.sIEndDate as? Date)?.formatDate()
-            print(item.childSUrgency?.sUUrgency)
+            beginDate = item.sIBeginDate as? Date
+            endedDate = item.sIEndDate as? Date
+            accessoryValue = sheduleItemToEdit.childSUrgency!.sURepeat
         }
     }
     
@@ -231,26 +284,60 @@ class AddScheduleItemVC: UIViewController,UITextFieldDelegate,UITableViewDelegat
             startTextFieldIsFirstResponder = false
         }
     }
+    func datePickerDoneConfig(){
+        let layer = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 240))
+        layer.backgroundColor = UIColor.darkGray
+        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        button.setTitle("Done", for: .normal)
+        button.tintColor = UIColor.white
+        button.backgroundColor = UIColor.clear
+        button.addTarget(self, action: #selector(datePickerDonePressed), for: .touchUpInside)
+        layer.addSubview(button)
+        layer.addSubview(datePicker)
+        view.addSubview(layer)
+    }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
+    }
     
     @IBAction func repeatButtonPressed(_ sender: AnyObject) {
-        datePicker.removeFromSuperview()
-        tableView.frame = CGRect(x: -100, y: -100, width: 250, height:250)
-        tableView.layer.shadowRadius = 6.0
-        tableView.layer.shadowColor = UIColor.black.cgColor
-        tableView.layer.shadowOffset = CGSize(width: 3.0, height: 2.0)
-        tableView.layer.shadowOpacity = 0.8
-        tableView.layer.cornerRadius = 10.0
-        UIView.animate(withDuration: 2, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 0.1, options: [], animations: {
-            self.tableView.center = self.view.center
-            self.view.addSubview(self.tableView)
-            }, completion: nil)
+        view.endEditing(true)
+        //datePicker.removeFromSuperview()
+        repeatButton.isEnabled = false
+
+        UIView.animate(withDuration: 0.3, animations: {
+            self.dateStackView.frame.origin.y -= 200
+            self.dateStackView.isHidden = true
+            self.stackView.frame.origin.y -= 200
+            self.tableView.frame.origin.y -= 200
+            self.tableView.frame.size.height += 180
+            
+            }) { (Bool) in
+
+        }
+
     }
 
+    @IBAction func groupbuttonSelected(_ sender: UIButton) {
+        performSegue(withIdentifier: SEGUE_TO_GROUP_SELECT_PAGE, sender: sheduleItemToEdit)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == SEGUE_TO_GROUP_SELECT_PAGE{
+            if let vc = segue.destination as? GoupSelectionVC{
+                if let item = sender as? SheduleItem{
+                    vc.scheduleItem = item
+                    vc.isFromCal = isFromCalView
+                }
+            }
+        }
+    }
 }
 
 
@@ -258,7 +345,7 @@ class AddScheduleItemVC: UIViewController,UITextFieldDelegate,UITableViewDelegat
 
 
 
-extension AddScheduleItemVC{
+extension AddScheduleItemVC {
     
     @objc(numberOfSectionsInTableView:) func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -281,34 +368,69 @@ extension AddScheduleItemVC{
         let cell = tableView.cellForRow(at: indexPath) as? RepeatCells
         cell?.accessoryType = .checkmark
         accessoryValue = Int64(indexPath.row)
-        
-        repeatButton.setTitle(repeatArray[indexPath.row], for: .normal)
-        UIView.animate(withDuration: 1, delay: 0, options: [.transitionCrossDissolve], animations: { 
-            self.tableView.removeFromSuperview()
-            }) { (Bool) in
-                cell?.accessoryType = .none
-        }
-    
-        
+        resetViews(title: repeatArray[indexPath.row])
     }
     
+    @objc(tableView:didDeselectRowAtIndexPath:) func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as? RepeatCells
+        cell?.accessoryType = .none
+    }
     
+    func resetViews(title:String){
+        UIView.animate(withDuration: 0.4, animations: { 
+            self.dateStackView.frame.origin.y += 200
+            self.dateStackView.isHidden = false
+            self.stackView.frame.origin.y += 200
+            self.tableView.frame.origin.y += 200
+            self.tableView.frame.size.height -= 180
+
+            }) { (Bool) in
+                self.repeatButton.setTitle(title, for: .normal)
+                self.repeatButton.isEnabled = true
+        }
+    }
     
+    @objc(tableView:heightForRowAtIndexPath:) func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 30
+        
+    }
+
+    func configUI(){
+        sheduleItemTextfield.keyboardAppearance = .dark
+        addedNotesTextView.keyboardAppearance = .dark
+        let toolbar = UIToolbar().ToolbarPiker(mySelect: #selector(datePickerDonePressed))
+        let ntb = UIToolbar().ToolbarPiker(mySelect: #selector(ended))
+        startDate.inputAccessoryView = toolbar
+        endDate.inputAccessoryView = toolbar
+        addedNotesTextView.inputAccessoryView = ntb
+        datePicker.addTarget(self, action: #selector(datePickerValueChanged(datePicker:)), for:UIControlEvents.valueChanged )
+        repeatArray = ["Hourly", "Daily","Weekly", "Monthly", "Annually", "Never"]
+        addedNotesTextView.layer.cornerRadius = 10
+
+    }
 }
 
 
 
-extension Date{
-    func dateFormat()-> String{
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "E HH:mm"
-        return dateFormatter.string(from: self)
+extension UIToolbar {
+    
+    func ToolbarPiker(mySelect : Selector) -> UIToolbar {
+        
+        let toolBar = UIToolbar()
+        
+        toolBar.barStyle = UIBarStyle.black
+        toolBar.isTranslucent = true
+        toolBar.isTranslucent = true
+        toolBar.tintColor = UIColor.white
+        toolBar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.plain, target: self, action: mySelect)
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+        
+        toolBar.setItems([ spaceButton, doneButton], animated: false)
+        toolBar.isUserInteractionEnabled = true
+        
+        return toolBar
     }
-    func formatDate() -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .short
-        dateFormatter.dateFormat = "dd-MMM-yyyy HH:mm"
-        let formattedDate = dateFormatter.string(from:self)
-        return formattedDate
-    }
+    
 }

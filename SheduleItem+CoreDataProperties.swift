@@ -26,5 +26,5 @@ extension SheduleItem {
     @NSManaged public var childSDetails: ScheduleDetails?
     @NSManaged public var childSUrgency: ScheduleUrgency?
     @NSManaged public var childSGroup: SheduleGroup?
-
+    @NSManaged public var sCalenderID:String?
 }
