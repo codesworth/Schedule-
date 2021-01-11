@@ -24,10 +24,10 @@ Make every day a success with Schedule+, it will make managing your life fun aga
 
 ## Screenshots
 <img align="left" width="200" height="356" src="https://github.com/codesworth/Schedule-/blob/master/snapshots/1242x2208bb.png"> 
-![Screenshot 2][logo2] 
-![Screenshot 3][logo3]
-![Screenshot 4][logo4] 
-![Screenshot 5][logo5]
+<img align="left" width="200" height="356" src="https://github.com/codesworth/Schedule-/blob/master/snapshots/1242x2208bb%20(1).png"> 
+<img align="left" width="200" height="356" src="https://github.com/codesworth/Schedule-/blob/master/snapshots/1242x2208bb%20(2).png"> 
+<img align="left" width="200" height="356" src="https://github.com/codesworth/Schedule-/blob/master/snapshots/1242x2208bb%20(3).png"> 
+<img align="left" width="200" height="356" src="https://github.com/codesworth/Schedule-/blob/master/snapshots/1242x2208bb%20(4).png"> 
 
 [logo1]: https://github.com/codesworth/Schedule-/blob/master/snapshots/1242x2208bb.png 
 [logo2]: https://github.com/codesworth/Schedule-/blob/master/snapshots/1242x2208bb.png 
