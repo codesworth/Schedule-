@@ -1,7 +1,7 @@
 # Schedule+
 A git repo for the Schedule+ ios App. Appstore link:  https://itunes.apple.com/gh/app/schedule/id1211532282?mt=8
 
-![Promo Image](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png)
+![Promo Image](https://github.com/codesworth/Schedule-/blob/master/snapshots/promo.jpeg)
 
 Schedule+ is a simple and convenient voice enabled reminder application for scheduling and managing events and activities efficiently to achieve goals and priorities with just one click of a button!
 Schedule+ recognizes the date and times in your speech and automatically sets alarms and alerts which notifies you when events are due.
