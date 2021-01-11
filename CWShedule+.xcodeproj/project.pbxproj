@@ -7,17 +7,190 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C4492DBE1D9151DE00CF5D7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4492DBD1D9151DE00CF5D7C /* AppDelegate.swift */; };
-		C4492DC01D9151DE00CF5D7C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4492DBF1D9151DE00CF5D7C /* ViewController.swift */; };
-		C4492DC31D9151DE00CF5D7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4492DC11D9151DE00CF5D7C /* Main.storyboard */; };
+		C40598941DF185E4005BEB47 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C40598931DF185E4005BEB47 /* UserNotifications.framework */; };
+		C40598961DF185E4005BEB47 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C40598951DF185E4005BEB47 /* UserNotificationsUI.framework */; };
+		C40598991DF185E4005BEB47 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40598981DF185E4005BEB47 /* NotificationViewController.swift */; };
+		C40598A01DF185E4005BEB47 /* NotifContentExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C40598911DF185E4005BEB47 /* NotifContentExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C4089ECA1DA004BA00D4729F /* MGSwipeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C4089EC71DA004BA00D4729F /* MGSwipeButton.m */; };
+		C4089ECB1DA004BA00D4729F /* MGSwipeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C4089EC91DA004BA00D4729F /* MGSwipeTableCell.m */; };
+		C40C3D2E1E181CA2006D4F7D /* CWSharedAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40C3D2D1E181CA2006D4F7D /* CWSharedAccess.swift */; };
+		C40C3D2F1E181CA2006D4F7D /* CWSharedAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40C3D2D1E181CA2006D4F7D /* CWSharedAccess.swift */; };
+		C41730121DA6934600BCFF5B /* CalenderCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41730111DA6934600BCFF5B /* CalenderCells.swift */; };
+		C41BCA6C1DD8A7450091BD5C /* CoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41BCA6B1DD8A7450091BD5C /* CoreService.swift */; };
+		C41CCDBC1E61D63C009F410D /* MaterialTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41CCDBB1E61D63C009F410D /* MaterialTextField.swift */; };
+		C41CCDC71E620F62009F410D /* ArrayEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41CCDBF1E620F62009F410D /* ArrayEx.swift */; };
+		C41CCDC81E620F62009F410D /* CGPointEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41CCDC01E620F62009F410D /* CGPointEx.swift */; };
+		C41CCDC91E620F62009F410D /* CGRectEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41CCDC11E620F62009F410D /* CGRectEx.swift */; };
+		C41CCDCA1E620F62009F410D /* LiquidFloatingActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41CCDC21E620F62009F410D /* LiquidFloatingActionButton.swift */; };
+		C41CCDCB1E620F62009F410D /* LiquidUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41CCDC31E620F62009F410D /* LiquidUtil.swift */; };
+		C41CCDCC1E620F62009F410D /* LiquittableCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41CCDC41E620F62009F410D /* LiquittableCircle.swift */; };
+		C41CCDCD1E620F62009F410D /* SimpleCircleLiquidEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41CCDC51E620F62009F410D /* SimpleCircleLiquidEngine.swift */; };
+		C41CCDCE1E620F62009F410D /* UIColorEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41CCDC61E620F62009F410D /* UIColorEx.swift */; };
+		C423AD071E6506310027D021 /* UIDeviceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C423AD061E6506310027D021 /* UIDeviceExtension.swift */; };
+		C423AD0D1E65858E0027D021 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C423AD091E65858E0027D021 /* Info.plist */; };
+		C423AD0E1E65858E0027D021 /* iRate.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C423AD0A1E65858E0027D021 /* iRate.bundle */; };
+		C423AD0F1E65858E0027D021 /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = C423AD0C1E65858E0027D021 /* iRate.m */; };
+		C42701A61DAB0DB5006A5CE3 /* AllScheduleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42701A51DAB0DB5006A5CE3 /* AllScheduleVC.swift */; };
+		C42A4FE81E468736008D19ED /* 3x 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C42A4FE71E468736008D19ED /* 3x 2.jpg */; };
+		C42E9E181E0D65AD0042E07F /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C42E9E171E0D65AD0042E07F /* NotificationCenter.framework */; };
+		C42E9E1B1E0D65AE0042E07F /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42E9E1A1E0D65AE0042E07F /* TodayViewController.swift */; };
+		C42E9E1E1E0D65AF0042E07F /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C42E9E1C1E0D65AF0042E07F /* MainInterface.storyboard */; };
+		C42E9E221E0D65B10042E07F /* Schedule+Today.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C42E9E161E0D65AC0042E07F /* Schedule+Today.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C42E9E2B1E0D67D00042E07F /* CoredataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42E9E291E0D67D00042E07F /* CoredataStack.swift */; };
+		C42E9E2C1E0D67D00042E07F /* CoredataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42E9E291E0D67D00042E07F /* CoredataStack.swift */; };
+		C42E9E2D1E0D67D00042E07F /* PersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42E9E2A1E0D67D00042E07F /* PersistentContainer.swift */; };
+		C42E9E2E1E0D67D00042E07F /* PersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42E9E2A1E0D67D00042E07F /* PersistentContainer.swift */; };
+		C42E9E311E0D68050042E07F /* TodayCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42E9E2F1E0D68050042E07F /* TodayCells.swift */; };
+		C42E9E321E0D68050042E07F /* TodayCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42E9E2F1E0D68050042E07F /* TodayCells.swift */; };
+		C42E9E331E0D68050042E07F /* TodayCells.xib in Resources */ = {isa = PBXBuildFile; fileRef = C42E9E301E0D68050042E07F /* TodayCells.xib */; };
+		C42E9E341E0D68050042E07F /* TodayCells.xib in Resources */ = {isa = PBXBuildFile; fileRef = C42E9E301E0D68050042E07F /* TodayCells.xib */; };
+		C42E9E351E0D688F0042E07F /* ScheduleDetails+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4492DF61D917AC900CF5D7C /* ScheduleDetails+CoreDataProperties.swift */; };
+		C42E9E361E0D688F0042E07F /* SheduleGroup+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4492DF81D917AC900CF5D7C /* SheduleGroup+CoreDataProperties.swift */; };
+		C42E9E371E0D688F0042E07F /* ScheduleImages+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4492DFA1D917AC900CF5D7C /* ScheduleImages+CoreDataProperties.swift */; };
+		C42E9E381E0D688F0042E07F /* SheduleItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4492DFC1D917AC900CF5D7C /* SheduleItem+CoreDataProperties.swift */; };
+		C42E9E391E0D688F0042E07F /* ScheduleUrgency+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4492DFE1D917AC900CF5D7C /* ScheduleUrgency+CoreDataProperties.swift */; };
+		C42E9E3A1E0D68AD0042E07F /* ScheduleDetails+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4492DF51D917AC900CF5D7C /* ScheduleDetails+CoreDataClass.swift */; };
+		C42E9E3B1E0D68AD0042E07F /* SheduleGroup+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4492DF71D917AC900CF5D7C /* SheduleGroup+CoreDataClass.swift */; };
+		C42E9E3C1E0D68AD0042E07F /* ScheduleImages+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4492DF91D917AC900CF5D7C /* ScheduleImages+CoreDataClass.swift */; };
+		C42E9E3D1E0D68AD0042E07F /* SheduleItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4492DFB1D917AC900CF5D7C /* SheduleItem+CoreDataClass.swift */; };
+		C42E9E3E1E0D68AD0042E07F /* ScheduleUrgency+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4492DFD1D917AC900CF5D7C /* ScheduleUrgency+CoreDataClass.swift */; };
+		C42E9E3F1E0D68E70042E07F /* CWShedule_.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C4492DC41D9151DE00CF5D7C /* CWShedule_.xcdatamodeld */; };
+		C42E9E401E0D6AC70042E07F /* ScheduleNotificatios.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45B59551DB00271000EF583 /* ScheduleNotificatios.swift */; };
+		C42E9E421E0D78930042E07F /* FoldingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42E9E411E0D78930042E07F /* FoldingCell.swift */; };
+		C431FA0C1DF1C09300E464B6 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40598981DF185E4005BEB47 /* NotificationViewController.swift */; };
+		C431FA111DF25EEA00E464B6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4492DF31D9179CA00CF5D7C /* Constants.swift */; };
+		C446BAA11D92924600EBF015 /* ScheduleItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C446BAA01D92924600EBF015 /* ScheduleItemCell.swift */; };
+		C4492DBE1D9151DE00CF5D7C /*  AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4492DBD1D9151DE00CF5D7C /*  AppDelegate.swift */; };
 		C4492DC61D9151DE00CF5D7C /* CWShedule_.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C4492DC41D9151DE00CF5D7C /* CWShedule_.xcdatamodeld */; };
-		C4492DC81D9151DE00CF5D7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4492DC71D9151DE00CF5D7C /* Assets.xcassets */; };
 		C4492DCB1D9151DE00CF5D7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4492DC91D9151DE00CF5D7C /* LaunchScreen.storyboard */; };
 		C4492DD61D9151DE00CF5D7C /* CWShedule_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4492DD51D9151DE00CF5D7C /* CWShedule_Tests.swift */; };
 		C4492DE11D9151DE00CF5D7C /* CWShedule_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4492DE01D9151DE00CF5D7C /* CWShedule_UITests.swift */; };
+		C4492DF41D9179CA00CF5D7C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4492DF31D9179CA00CF5D7C /* Constants.swift */; };
+		C4492DFF1D917AC900CF5D7C /* ScheduleDetails+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4492DF51D917AC900CF5D7C /* ScheduleDetails+CoreDataClass.swift */; };
+		C4492E001D917AC900CF5D7C /* ScheduleDetails+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4492DF61D917AC900CF5D7C /* ScheduleDetails+CoreDataProperties.swift */; };
+		C4492E011D917AC900CF5D7C /* SheduleGroup+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4492DF71D917AC900CF5D7C /* SheduleGroup+CoreDataClass.swift */; };
+		C4492E021D917AC900CF5D7C /* SheduleGroup+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4492DF81D917AC900CF5D7C /* SheduleGroup+CoreDataProperties.swift */; };
+		C4492E031D917AC900CF5D7C /* ScheduleImages+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4492DF91D917AC900CF5D7C /* ScheduleImages+CoreDataClass.swift */; };
+		C4492E041D917AC900CF5D7C /* ScheduleImages+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4492DFA1D917AC900CF5D7C /* ScheduleImages+CoreDataProperties.swift */; };
+		C4492E051D917AC900CF5D7C /* SheduleItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4492DFB1D917AC900CF5D7C /* SheduleItem+CoreDataClass.swift */; };
+		C4492E061D917AC900CF5D7C /* SheduleItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4492DFC1D917AC900CF5D7C /* SheduleItem+CoreDataProperties.swift */; };
+		C4492E071D917AC900CF5D7C /* ScheduleUrgency+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4492DFD1D917AC900CF5D7C /* ScheduleUrgency+CoreDataClass.swift */; };
+		C4492E081D917AC900CF5D7C /* ScheduleUrgency+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4492DFE1D917AC900CF5D7C /* ScheduleUrgency+CoreDataProperties.swift */; };
+		C4492E0A1D917B8400CF5D7C /* SheduleGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4492E091D917B8400CF5D7C /* SheduleGroupVC.swift */; };
+		C4492E1E1D91828100CF5D7C /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4492E0C1D91828100CF5D7C /* Roboto-Black.ttf */; };
+		C4492E1F1D91828100CF5D7C /* Roboto-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4492E0D1D91828100CF5D7C /* Roboto-BlackItalic.ttf */; };
+		C4492E201D91828100CF5D7C /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4492E0E1D91828100CF5D7C /* Roboto-Bold.ttf */; };
+		C4492E211D91828100CF5D7C /* Roboto-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4492E0F1D91828100CF5D7C /* Roboto-BoldItalic.ttf */; };
+		C4492E221D91828100CF5D7C /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4492E101D91828100CF5D7C /* Roboto-Italic.ttf */; };
+		C4492E231D91828100CF5D7C /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4492E111D91828100CF5D7C /* Roboto-Light.ttf */; };
+		C4492E241D91828100CF5D7C /* Roboto-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4492E121D91828100CF5D7C /* Roboto-LightItalic.ttf */; };
+		C4492E251D91828100CF5D7C /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4492E131D91828100CF5D7C /* Roboto-Medium.ttf */; };
+		C4492E261D91828100CF5D7C /* Roboto-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4492E141D91828100CF5D7C /* Roboto-MediumItalic.ttf */; };
+		C4492E271D91828100CF5D7C /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4492E151D91828100CF5D7C /* Roboto-Regular.ttf */; };
+		C4492E281D91828100CF5D7C /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4492E161D91828100CF5D7C /* Roboto-Thin.ttf */; };
+		C4492E291D91828100CF5D7C /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4492E171D91828100CF5D7C /* Roboto-ThinItalic.ttf */; };
+		C4492E2A1D91828100CF5D7C /* RobotoCondensed-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4492E181D91828100CF5D7C /* RobotoCondensed-Bold.ttf */; };
+		C4492E2B1D91828100CF5D7C /* RobotoCondensed-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4492E191D91828100CF5D7C /* RobotoCondensed-BoldItalic.ttf */; };
+		C4492E2C1D91828100CF5D7C /* RobotoCondensed-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4492E1A1D91828100CF5D7C /* RobotoCondensed-Italic.ttf */; };
+		C4492E2D1D91828100CF5D7C /* RobotoCondensed-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4492E1B1D91828100CF5D7C /* RobotoCondensed-Light.ttf */; };
+		C4492E2E1D91828100CF5D7C /* RobotoCondensed-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4492E1C1D91828100CF5D7C /* RobotoCondensed-LightItalic.ttf */; };
+		C4492E2F1D91828100CF5D7C /* RobotoCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4492E1D1D91828100CF5D7C /* RobotoCondensed-Regular.ttf */; };
+		C4492E331D9193C500CF5D7C /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4492E321D9193C500CF5D7C /* DesignableView.swift */; };
+		C4492E351D9198AE00CF5D7C /* SheduleGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4492E341D9198AE00CF5D7C /* SheduleGroupCell.swift */; };
+		C4492E371D9221A200CF5D7C /* ScheduleGroupDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4492E361D9221A200CF5D7C /* ScheduleGroupDetail.swift */; };
+		C4492E3A1D925D1F00CF5D7C /* ScheduleItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4492E391D925D1F00CF5D7C /* ScheduleItemVC.swift */; };
+		C44931B51E468BD200265D71 /* launch.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C44931B41E468BD200265D71 /* launch.jpg */; };
+		C44AB9CF1E52665D005171CC /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = C44AB9CE1E52665D005171CC /* Reachability.m */; };
+		C44AB9D11E533E1B005171CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C44AB9D01E533E1B005171CC /* Assets.xcassets */; };
+		C44AB9D21E533E1B005171CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C44AB9D01E533E1B005171CC /* Assets.xcassets */; };
+		C44AB9D31E533E1B005171CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C44AB9D01E533E1B005171CC /* Assets.xcassets */; };
+		C45B59561DB00271000EF583 /* ScheduleNotificatios.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45B59551DB00271000EF583 /* ScheduleNotificatios.swift */; };
+		C46D91511E0DCC140097E8F6 /* PasscodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46D91501E0DCC140097E8F6 /* PasscodeVC.swift */; };
+		C47FB7191D936C76007C601A /* AddScheduleItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47FB7181D936C76007C601A /* AddScheduleItemVC.swift */; };
+		C47FB71F1D93C4AD007C601A /* BlurrableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47FB71E1D93C4AD007C601A /* BlurrableView.swift */; };
+		C47FB7211D94782B007C601A /* RepeatCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47FB7201D94782B007C601A /* RepeatCells.swift */; };
+		C4819A7D1E6230EB0082F137 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4819A5A1E6230EB0082F137 /* Constraint.swift */; };
+		C4819A7E1E6230EB0082F137 /* ConstraintAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4819A5B1E6230EB0082F137 /* ConstraintAttributes.swift */; };
+		C4819A7F1E6230EB0082F137 /* ConstraintConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4819A5C1E6230EB0082F137 /* ConstraintConfig.swift */; };
+		C4819A801E6230EB0082F137 /* ConstraintConstantTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4819A5D1E6230EB0082F137 /* ConstraintConstantTarget.swift */; };
+		C4819A811E6230EB0082F137 /* ConstraintDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4819A5E1E6230EB0082F137 /* ConstraintDescription.swift */; };
+		C4819A821E6230EB0082F137 /* ConstraintDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4819A5F1E6230EB0082F137 /* ConstraintDSL.swift */; };
+		C4819A831E6230EB0082F137 /* ConstraintInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4819A601E6230EB0082F137 /* ConstraintInsets.swift */; };
+		C4819A841E6230EB0082F137 /* ConstraintInsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4819A611E6230EB0082F137 /* ConstraintInsetTarget.swift */; };
+		C4819A851E6230EB0082F137 /* ConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4819A621E6230EB0082F137 /* ConstraintItem.swift */; };
+		C4819A861E6230EB0082F137 /* ConstraintLayoutGuide+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4819A631E6230EB0082F137 /* ConstraintLayoutGuide+Extensions.swift */; };
+		C4819A871E6230EB0082F137 /* ConstraintLayoutGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4819A641E6230EB0082F137 /* ConstraintLayoutGuide.swift */; };
+		C4819A881E6230EB0082F137 /* ConstraintLayoutGuideDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4819A651E6230EB0082F137 /* ConstraintLayoutGuideDSL.swift */; };
+		C4819A891E6230EB0082F137 /* ConstraintLayoutSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4819A661E6230EB0082F137 /* ConstraintLayoutSupport.swift */; };
+		C4819A8A1E6230EB0082F137 /* ConstraintLayoutSupportDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4819A671E6230EB0082F137 /* ConstraintLayoutSupportDSL.swift */; };
+		C4819A8B1E6230EB0082F137 /* ConstraintMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4819A681E6230EB0082F137 /* ConstraintMaker.swift */; };
+		C4819A8C1E6230EB0082F137 /* ConstraintMakerEditable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4819A691E6230EB0082F137 /* ConstraintMakerEditable.swift */; };
+		C4819A8D1E6230EB0082F137 /* ConstraintMakerExtendable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4819A6A1E6230EB0082F137 /* ConstraintMakerExtendable.swift */; };
+		C4819A8E1E6230EB0082F137 /* ConstraintMakerFinalizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4819A6B1E6230EB0082F137 /* ConstraintMakerFinalizable.swift */; };
+		C4819A8F1E6230EB0082F137 /* ConstraintMakerPriortizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4819A6C1E6230EB0082F137 /* ConstraintMakerPriortizable.swift */; };
+		C4819A901E6230EB0082F137 /* ConstraintMakerRelatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4819A6D1E6230EB0082F137 /* ConstraintMakerRelatable.swift */; };
+		C4819A911E6230EB0082F137 /* ConstraintMultiplierTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4819A6E1E6230EB0082F137 /* ConstraintMultiplierTarget.swift */; };
+		C4819A921E6230EB0082F137 /* ConstraintOffsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4819A6F1E6230EB0082F137 /* ConstraintOffsetTarget.swift */; };
+		C4819A931E6230EB0082F137 /* ConstraintPriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4819A701E6230EB0082F137 /* ConstraintPriority.swift */; };
+		C4819A941E6230EB0082F137 /* ConstraintPriorityTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4819A711E6230EB0082F137 /* ConstraintPriorityTarget.swift */; };
+		C4819A951E6230EB0082F137 /* ConstraintRelatableTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4819A721E6230EB0082F137 /* ConstraintRelatableTarget.swift */; };
+		C4819A961E6230EB0082F137 /* ConstraintRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4819A731E6230EB0082F137 /* ConstraintRelation.swift */; };
+		C4819A971E6230EB0082F137 /* ConstraintView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4819A741E6230EB0082F137 /* ConstraintView+Extensions.swift */; };
+		C4819A981E6230EB0082F137 /* ConstraintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4819A751E6230EB0082F137 /* ConstraintView.swift */; };
+		C4819A991E6230EB0082F137 /* ConstraintViewDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4819A761E6230EB0082F137 /* ConstraintViewDSL.swift */; };
+		C4819A9A1E6230EB0082F137 /* Debugging.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4819A771E6230EB0082F137 /* Debugging.swift */; };
+		C4819A9B1E6230EB0082F137 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C4819A781E6230EB0082F137 /* Info.plist */; };
+		C4819A9C1E6230EB0082F137 /* LayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4819A791E6230EB0082F137 /* LayoutConstraint.swift */; };
+		C4819A9D1E6230EB0082F137 /* LayoutConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4819A7A1E6230EB0082F137 /* LayoutConstraintItem.swift */; };
+		C4819A9E1E6230EB0082F137 /* UILayoutSupport+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4819A7C1E6230EB0082F137 /* UILayoutSupport+Extensions.swift */; };
+		C4819AA01E635C6E0082F137 /* Notification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4819A9F1E635C6E0082F137 /* Notification.storyboard */; };
+		C484FF651DC656D500214F11 /* SpeechTranscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = C484FF641DC656D500214F11 /* SpeechTranscription.swift */; };
+		C48801991E1323FD00DC4614 /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = C48801981E1323FD00DC4614 /* KeychainWrapper.m */; };
+		C488019B1E13E35000DC4614 /* GoupSelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C488019A1E13E34F00DC4614 /* GoupSelectionVC.swift */; };
+		C494F9741E1039FB00FB475A /* FoldAllScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C494F9731E1039FB00FB475A /* FoldAllScheduleCell.swift */; };
+		C4A080231E5D344F00B6C628 /* CWExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A080221E5D344F00B6C628 /* CWExtensions.swift */; };
+		C4A497BD1DD2A3050076A77B /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A497BC1DD2A3050076A77B /* ButtonView.swift */; };
+		C4B72BA11DC5462500553E9C /* CWVoiceRecognition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B72BA01DC5462500553E9C /* CWVoiceRecognition.swift */; };
+		C4B72BA31DC62D6B00553E9C /* CWScheduleStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B72BA21DC62D6A00553E9C /* CWScheduleStats.swift */; };
+		C4B741BA1DAB6BDB00CB3F99 /* AllScheduleCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B741B91DAB6BDB00CB3F99 /* AllScheduleCells.swift */; };
+		C4B7DC2A1E67CBD600DD76F8 /* CWPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B7DC291E67CBD600DD76F8 /* CWPageViewController.swift */; };
+		C4B7DC2C1E67D65F00DD76F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4B7DC2B1E67D65F00DD76F8 /* Main.storyboard */; };
+		C4C16DED1E19A9F80045C836 /* TutsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C16DEC1E19A9F80045C836 /* TutsVC.swift */; };
+		C4C16DF01E19AD630045C836 /* PageContentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C16DEF1E19AD630045C836 /* PageContentVC.m */; };
+		C4D0437B1E0DEBF100ACA5C6 /* PasscodeNotif.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D0437A1E0DEBF100ACA5C6 /* PasscodeNotif.swift */; };
+		C4D0437D1E0DFC1000ACA5C6 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D0437C1E0DFC1000ACA5C6 /* SettingsVC.swift */; };
+		C4F152531DA1465E00D6AB72 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F152521DA1465E00D6AB72 /* HomeVC.swift */; };
+		C4F152911DA1A76300D6AB72 /* UpcomingCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F152901DA1A76300D6AB72 /* UpcomingCells.swift */; };
+		C4F8FC661DA4C5B30068F767 /* CalenderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F8FC651DA4C5B30068F767 /* CalenderVC.swift */; };
+		C4F8FCB41DA4C6AF0068F767 /* JTCalendarDayView.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F8FC971DA4C6AF0068F767 /* JTCalendarDayView.m */; };
+		C4F8FCB51DA4C6AF0068F767 /* JTCalendarDelegateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F8FC9A1DA4C6AF0068F767 /* JTCalendarDelegateManager.m */; };
+		C4F8FCB61DA4C6AF0068F767 /* JTCalendarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F8FC9C1DA4C6AF0068F767 /* JTCalendarManager.m */; };
+		C4F8FCB71DA4C6AF0068F767 /* JTCalendarMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F8FC9E1DA4C6AF0068F767 /* JTCalendarMenuView.m */; };
+		C4F8FCB81DA4C6AF0068F767 /* JTCalendarPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F8FCA11DA4C6AF0068F767 /* JTCalendarPageView.m */; };
+		C4F8FCB91DA4C6AF0068F767 /* JTCalendarScrollManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F8FCA31DA4C6AF0068F767 /* JTCalendarScrollManager.m */; };
+		C4F8FCBA1DA4C6AF0068F767 /* JTCalendarSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F8FCA51DA4C6AF0068F767 /* JTCalendarSettings.m */; };
+		C4F8FCBB1DA4C6AF0068F767 /* JTCalendarWeekDayView.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F8FCA91DA4C6AF0068F767 /* JTCalendarWeekDayView.m */; };
+		C4F8FCBC1DA4C6AF0068F767 /* JTCalendarWeekView.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F8FCAB1DA4C6AF0068F767 /* JTCalendarWeekView.m */; };
+		C4F8FCBD1DA4C6AF0068F767 /* JTDateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F8FCAE1DA4C6AF0068F767 /* JTDateHelper.m */; };
+		C4F8FCBE1DA4C6AF0068F767 /* JTHorizontalCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F8FCB01DA4C6AF0068F767 /* JTHorizontalCalendarView.m */; };
+		C4F8FCBF1DA4C6AF0068F767 /* JTVerticalCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F8FCB31DA4C6AF0068F767 /* JTVerticalCalendarView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		C405989E1DF185E4005BEB47 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C4492DB21D9151DE00CF5D7C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C40598901DF185E4005BEB47;
+			remoteInfo = NotifContentExtension;
+		};
+		C42E9E201E0D65B10042E07F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C4492DB21D9151DE00CF5D7C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C42E9E151E0D65AC0042E07F;
+			remoteInfo = "Schedule+Today";
+		};
 		C4492DD21D9151DE00CF5D7C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C4492DB21D9151DE00CF5D7C /* Project object */;
@@ -34,13 +207,67 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		C40598A41DF185E4005BEB47 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				C40598A01DF185E4005BEB47 /* NotifContentExtension.appex in Embed App Extensions */,
+				C42E9E221E0D65B10042E07F /* Schedule+Today.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		C40598911DF185E4005BEB47 /* NotifContentExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotifContentExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		C40598931DF185E4005BEB47 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		C40598951DF185E4005BEB47 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
+		C40598981DF185E4005BEB47 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		C405989D1DF185E4005BEB47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4089EC51DA004B900D4729F /* CWShedule+-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CWShedule+-Bridging-Header.h"; sourceTree = "<group>"; };
+		C4089EC61DA004BA00D4729F /* MGSwipeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeButton.h; sourceTree = "<group>"; };
+		C4089EC71DA004BA00D4729F /* MGSwipeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeButton.m; sourceTree = "<group>"; };
+		C4089EC81DA004BA00D4729F /* MGSwipeTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeTableCell.h; sourceTree = "<group>"; };
+		C4089EC91DA004BA00D4729F /* MGSwipeTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeTableCell.m; sourceTree = "<group>"; };
+		C40C3D2D1E181CA2006D4F7D /* CWSharedAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CWSharedAccess.swift; sourceTree = "<group>"; };
+		C41730111DA6934600BCFF5B /* CalenderCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalenderCells.swift; sourceTree = "<group>"; };
+		C41BCA6B1DD8A7450091BD5C /* CoreService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreService.swift; sourceTree = "<group>"; };
+		C41CCDBB1E61D63C009F410D /* MaterialTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialTextField.swift; sourceTree = "<group>"; };
+		C41CCDBF1E620F62009F410D /* ArrayEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayEx.swift; sourceTree = "<group>"; };
+		C41CCDC01E620F62009F410D /* CGPointEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPointEx.swift; sourceTree = "<group>"; };
+		C41CCDC11E620F62009F410D /* CGRectEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectEx.swift; sourceTree = "<group>"; };
+		C41CCDC21E620F62009F410D /* LiquidFloatingActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiquidFloatingActionButton.swift; sourceTree = "<group>"; };
+		C41CCDC31E620F62009F410D /* LiquidUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiquidUtil.swift; sourceTree = "<group>"; };
+		C41CCDC41E620F62009F410D /* LiquittableCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiquittableCircle.swift; sourceTree = "<group>"; };
+		C41CCDC51E620F62009F410D /* SimpleCircleLiquidEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleCircleLiquidEngine.swift; sourceTree = "<group>"; };
+		C41CCDC61E620F62009F410D /* UIColorEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorEx.swift; sourceTree = "<group>"; };
+		C423AD061E6506310027D021 /* UIDeviceExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDeviceExtension.swift; sourceTree = "<group>"; };
+		C423AD091E65858E0027D021 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C423AD0A1E65858E0027D021 /* iRate.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = iRate.bundle; sourceTree = "<group>"; };
+		C423AD0B1E65858E0027D021 /* iRate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iRate.h; sourceTree = "<group>"; };
+		C423AD0C1E65858E0027D021 /* iRate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iRate.m; sourceTree = "<group>"; };
+		C42701A51DAB0DB5006A5CE3 /* AllScheduleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllScheduleVC.swift; sourceTree = "<group>"; };
+		C42A4FE71E468736008D19ED /* 3x 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "3x 2.jpg"; sourceTree = "<group>"; };
+		C42E9E161E0D65AC0042E07F /* Schedule+Today.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Schedule+Today.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C42E9E171E0D65AD0042E07F /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		C42E9E1A1E0D65AE0042E07F /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		C42E9E1D1E0D65AF0042E07F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		C42E9E1F1E0D65B10042E07F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C42E9E261E0D65E30042E07F /* CWShedule+.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "CWShedule+.entitlements"; sourceTree = "<group>"; };
+		C42E9E271E0D66800042E07F /* NotifContentExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NotifContentExtension.entitlements; sourceTree = "<group>"; };
+		C42E9E291E0D67D00042E07F /* CoredataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoredataStack.swift; sourceTree = "<group>"; };
+		C42E9E2A1E0D67D00042E07F /* PersistentContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistentContainer.swift; sourceTree = "<group>"; };
+		C42E9E2F1E0D68050042E07F /* TodayCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayCells.swift; sourceTree = "<group>"; };
+		C42E9E301E0D68050042E07F /* TodayCells.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TodayCells.xib; sourceTree = "<group>"; };
+		C42E9E411E0D78930042E07F /* FoldingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoldingCell.swift; sourceTree = "<group>"; };
+		C446BAA01D92924600EBF015 /* ScheduleItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleItemCell.swift; sourceTree = "<group>"; };
 		C4492DBA1D9151DE00CF5D7C /* CWShedule+.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CWShedule+.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C4492DBD1D9151DE00CF5D7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C4492DBF1D9151DE00CF5D7C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C4492DC21D9151DE00CF5D7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C4492DBD1D9151DE00CF5D7C /*  AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " AppDelegate.swift"; sourceTree = "<group>"; };
 		C4492DC51D9151DE00CF5D7C /* CWShedule_.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CWShedule_.xcdatamodel; sourceTree = "<group>"; };
-		C4492DC71D9151DE00CF5D7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C4492DCA1D9151DE00CF5D7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C4492DCC1D9151DE00CF5D7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4492DD11D9151DE00CF5D7C /* CWShedule+Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CWShedule+Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,9 +276,158 @@
 		C4492DDC1D9151DE00CF5D7C /* CWShedule+UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CWShedule+UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4492DE01D9151DE00CF5D7C /* CWShedule_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CWShedule_UITests.swift; sourceTree = "<group>"; };
 		C4492DE21D9151DE00CF5D7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4492DF31D9179CA00CF5D7C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C4492DF51D917AC900CF5D7C /* ScheduleDetails+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ScheduleDetails+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C4492DF61D917AC900CF5D7C /* ScheduleDetails+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ScheduleDetails+CoreDataProperties.swift"; path = "../ScheduleDetails+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C4492DF71D917AC900CF5D7C /* SheduleGroup+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SheduleGroup+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C4492DF81D917AC900CF5D7C /* SheduleGroup+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SheduleGroup+CoreDataProperties.swift"; path = "../SheduleGroup+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C4492DF91D917AC900CF5D7C /* ScheduleImages+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ScheduleImages+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C4492DFA1D917AC900CF5D7C /* ScheduleImages+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ScheduleImages+CoreDataProperties.swift"; path = "../ScheduleImages+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C4492DFB1D917AC900CF5D7C /* SheduleItem+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SheduleItem+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C4492DFC1D917AC900CF5D7C /* SheduleItem+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "SheduleItem+CoreDataProperties.swift"; path = "../SheduleItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C4492DFD1D917AC900CF5D7C /* ScheduleUrgency+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ScheduleUrgency+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C4492DFE1D917AC900CF5D7C /* ScheduleUrgency+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ScheduleUrgency+CoreDataProperties.swift"; path = "../ScheduleUrgency+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C4492E091D917B8400CF5D7C /* SheduleGroupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheduleGroupVC.swift; sourceTree = "<group>"; };
+		C4492E0C1D91828100CF5D7C /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
+		C4492E0D1D91828100CF5D7C /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BlackItalic.ttf"; sourceTree = "<group>"; };
+		C4492E0E1D91828100CF5D7C /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		C4492E0F1D91828100CF5D7C /* Roboto-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BoldItalic.ttf"; sourceTree = "<group>"; };
+		C4492E101D91828100CF5D7C /* Roboto-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Italic.ttf"; sourceTree = "<group>"; };
+		C4492E111D91828100CF5D7C /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
+		C4492E121D91828100CF5D7C /* Roboto-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-LightItalic.ttf"; sourceTree = "<group>"; };
+		C4492E131D91828100CF5D7C /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		C4492E141D91828100CF5D7C /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-MediumItalic.ttf"; sourceTree = "<group>"; };
+		C4492E151D91828100CF5D7C /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		C4492E161D91828100CF5D7C /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
+		C4492E171D91828100CF5D7C /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
+		C4492E181D91828100CF5D7C /* RobotoCondensed-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Bold.ttf"; sourceTree = "<group>"; };
+		C4492E191D91828100CF5D7C /* RobotoCondensed-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-BoldItalic.ttf"; sourceTree = "<group>"; };
+		C4492E1A1D91828100CF5D7C /* RobotoCondensed-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Italic.ttf"; sourceTree = "<group>"; };
+		C4492E1B1D91828100CF5D7C /* RobotoCondensed-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Light.ttf"; sourceTree = "<group>"; };
+		C4492E1C1D91828100CF5D7C /* RobotoCondensed-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-LightItalic.ttf"; sourceTree = "<group>"; };
+		C4492E1D1D91828100CF5D7C /* RobotoCondensed-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Regular.ttf"; sourceTree = "<group>"; };
+		C4492E321D9193C500CF5D7C /* DesignableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
+		C4492E341D9198AE00CF5D7C /* SheduleGroupCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SheduleGroupCell.swift; sourceTree = "<group>"; };
+		C4492E361D9221A200CF5D7C /* ScheduleGroupDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleGroupDetail.swift; sourceTree = "<group>"; };
+		C4492E391D925D1F00CF5D7C /* ScheduleItemVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleItemVC.swift; sourceTree = "<group>"; };
+		C44931B41E468BD200265D71 /* launch.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = launch.jpg; sourceTree = "<group>"; };
+		C44AB9CD1E52665D005171CC /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		C44AB9CE1E52665D005171CC /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		C44AB9D01E533E1B005171CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C45B59551DB00271000EF583 /* ScheduleNotificatios.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleNotificatios.swift; sourceTree = "<group>"; };
+		C46D91501E0DCC140097E8F6 /* PasscodeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasscodeVC.swift; sourceTree = "<group>"; };
+		C46EB42A1E3FEDFD0090C91F /* Schedule+Today.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Schedule+Today.entitlements"; sourceTree = "<group>"; };
+		C47FB7181D936C76007C601A /* AddScheduleItemVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddScheduleItemVC.swift; sourceTree = "<group>"; };
+		C47FB71E1D93C4AD007C601A /* BlurrableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurrableView.swift; sourceTree = "<group>"; };
+		C47FB7201D94782B007C601A /* RepeatCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepeatCells.swift; sourceTree = "<group>"; };
+		C4819A5A1E6230EB0082F137 /* Constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; };
+		C4819A5B1E6230EB0082F137 /* ConstraintAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintAttributes.swift; sourceTree = "<group>"; };
+		C4819A5C1E6230EB0082F137 /* ConstraintConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintConfig.swift; sourceTree = "<group>"; };
+		C4819A5D1E6230EB0082F137 /* ConstraintConstantTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintConstantTarget.swift; sourceTree = "<group>"; };
+		C4819A5E1E6230EB0082F137 /* ConstraintDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintDescription.swift; sourceTree = "<group>"; };
+		C4819A5F1E6230EB0082F137 /* ConstraintDSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintDSL.swift; sourceTree = "<group>"; };
+		C4819A601E6230EB0082F137 /* ConstraintInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintInsets.swift; sourceTree = "<group>"; };
+		C4819A611E6230EB0082F137 /* ConstraintInsetTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintInsetTarget.swift; sourceTree = "<group>"; };
+		C4819A621E6230EB0082F137 /* ConstraintItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintItem.swift; sourceTree = "<group>"; };
+		C4819A631E6230EB0082F137 /* ConstraintLayoutGuide+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ConstraintLayoutGuide+Extensions.swift"; sourceTree = "<group>"; };
+		C4819A641E6230EB0082F137 /* ConstraintLayoutGuide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintLayoutGuide.swift; sourceTree = "<group>"; };
+		C4819A651E6230EB0082F137 /* ConstraintLayoutGuideDSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintLayoutGuideDSL.swift; sourceTree = "<group>"; };
+		C4819A661E6230EB0082F137 /* ConstraintLayoutSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintLayoutSupport.swift; sourceTree = "<group>"; };
+		C4819A671E6230EB0082F137 /* ConstraintLayoutSupportDSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintLayoutSupportDSL.swift; sourceTree = "<group>"; };
+		C4819A681E6230EB0082F137 /* ConstraintMaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintMaker.swift; sourceTree = "<group>"; };
+		C4819A691E6230EB0082F137 /* ConstraintMakerEditable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintMakerEditable.swift; sourceTree = "<group>"; };
+		C4819A6A1E6230EB0082F137 /* ConstraintMakerExtendable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintMakerExtendable.swift; sourceTree = "<group>"; };
+		C4819A6B1E6230EB0082F137 /* ConstraintMakerFinalizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintMakerFinalizable.swift; sourceTree = "<group>"; };
+		C4819A6C1E6230EB0082F137 /* ConstraintMakerPriortizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintMakerPriortizable.swift; sourceTree = "<group>"; };
+		C4819A6D1E6230EB0082F137 /* ConstraintMakerRelatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintMakerRelatable.swift; sourceTree = "<group>"; };
+		C4819A6E1E6230EB0082F137 /* ConstraintMultiplierTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintMultiplierTarget.swift; sourceTree = "<group>"; };
+		C4819A6F1E6230EB0082F137 /* ConstraintOffsetTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintOffsetTarget.swift; sourceTree = "<group>"; };
+		C4819A701E6230EB0082F137 /* ConstraintPriority.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintPriority.swift; sourceTree = "<group>"; };
+		C4819A711E6230EB0082F137 /* ConstraintPriorityTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintPriorityTarget.swift; sourceTree = "<group>"; };
+		C4819A721E6230EB0082F137 /* ConstraintRelatableTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintRelatableTarget.swift; sourceTree = "<group>"; };
+		C4819A731E6230EB0082F137 /* ConstraintRelation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintRelation.swift; sourceTree = "<group>"; };
+		C4819A741E6230EB0082F137 /* ConstraintView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ConstraintView+Extensions.swift"; sourceTree = "<group>"; };
+		C4819A751E6230EB0082F137 /* ConstraintView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintView.swift; sourceTree = "<group>"; };
+		C4819A761E6230EB0082F137 /* ConstraintViewDSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintViewDSL.swift; sourceTree = "<group>"; };
+		C4819A771E6230EB0082F137 /* Debugging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Debugging.swift; sourceTree = "<group>"; };
+		C4819A781E6230EB0082F137 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4819A791E6230EB0082F137 /* LayoutConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutConstraint.swift; sourceTree = "<group>"; };
+		C4819A7A1E6230EB0082F137 /* LayoutConstraintItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutConstraintItem.swift; sourceTree = "<group>"; };
+		C4819A7B1E6230EB0082F137 /* SnapKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnapKit.h; sourceTree = "<group>"; };
+		C4819A7C1E6230EB0082F137 /* UILayoutSupport+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILayoutSupport+Extensions.swift"; sourceTree = "<group>"; };
+		C4819A9F1E635C6E0082F137 /* Notification.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Notification.storyboard; sourceTree = "<group>"; };
+		C484FF641DC656D500214F11 /* SpeechTranscription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechTranscription.swift; sourceTree = "<group>"; };
+		C48801971E1323FD00DC4614 /* KeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainWrapper.h; sourceTree = "<group>"; };
+		C48801981E1323FD00DC4614 /* KeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainWrapper.m; sourceTree = "<group>"; };
+		C488019A1E13E34F00DC4614 /* GoupSelectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoupSelectionVC.swift; sourceTree = "<group>"; };
+		C494F9731E1039FB00FB475A /* FoldAllScheduleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoldAllScheduleCell.swift; sourceTree = "<group>"; };
+		C4A080221E5D344F00B6C628 /* CWExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CWExtensions.swift; sourceTree = "<group>"; };
+		C4A497BC1DD2A3050076A77B /* ButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		C4B72BA01DC5462500553E9C /* CWVoiceRecognition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CWVoiceRecognition.swift; sourceTree = "<group>"; };
+		C4B72BA21DC62D6A00553E9C /* CWScheduleStats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CWScheduleStats.swift; sourceTree = "<group>"; };
+		C4B741B91DAB6BDB00CB3F99 /* AllScheduleCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllScheduleCells.swift; sourceTree = "<group>"; };
+		C4B7DC291E67CBD600DD76F8 /* CWPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CWPageViewController.swift; sourceTree = "<group>"; };
+		C4B7DC2B1E67D65F00DD76F8 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		C4C16DEC1E19A9F80045C836 /* TutsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutsVC.swift; sourceTree = "<group>"; };
+		C4C16DEE1E19AD630045C836 /* PageContentVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContentVC.h; sourceTree = "<group>"; };
+		C4C16DEF1E19AD630045C836 /* PageContentVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContentVC.m; sourceTree = "<group>"; };
+		C4D0437A1E0DEBF100ACA5C6 /* PasscodeNotif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasscodeNotif.swift; sourceTree = "<group>"; };
+		C4D0437C1E0DFC1000ACA5C6 /* SettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		C4F152521DA1465E00D6AB72 /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		C4F152901DA1A76300D6AB72 /* UpcomingCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpcomingCells.swift; sourceTree = "<group>"; };
+		C4F8FC651DA4C5B30068F767 /* CalenderVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalenderVC.swift; sourceTree = "<group>"; };
+		C4F8FC941DA4C6AF0068F767 /* JTCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTCalendar.h; sourceTree = "<group>"; };
+		C4F8FC951DA4C6AF0068F767 /* JTCalendarDay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTCalendarDay.h; sourceTree = "<group>"; };
+		C4F8FC961DA4C6AF0068F767 /* JTCalendarDayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTCalendarDayView.h; sourceTree = "<group>"; };
+		C4F8FC971DA4C6AF0068F767 /* JTCalendarDayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTCalendarDayView.m; sourceTree = "<group>"; };
+		C4F8FC981DA4C6AF0068F767 /* JTCalendarDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTCalendarDelegate.h; sourceTree = "<group>"; };
+		C4F8FC991DA4C6AF0068F767 /* JTCalendarDelegateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTCalendarDelegateManager.h; sourceTree = "<group>"; };
+		C4F8FC9A1DA4C6AF0068F767 /* JTCalendarDelegateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTCalendarDelegateManager.m; sourceTree = "<group>"; };
+		C4F8FC9B1DA4C6AF0068F767 /* JTCalendarManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTCalendarManager.h; sourceTree = "<group>"; };
+		C4F8FC9C1DA4C6AF0068F767 /* JTCalendarManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTCalendarManager.m; sourceTree = "<group>"; };
+		C4F8FC9D1DA4C6AF0068F767 /* JTCalendarMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTCalendarMenuView.h; sourceTree = "<group>"; };
+		C4F8FC9E1DA4C6AF0068F767 /* JTCalendarMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTCalendarMenuView.m; sourceTree = "<group>"; };
+		C4F8FC9F1DA4C6AF0068F767 /* JTCalendarPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTCalendarPage.h; sourceTree = "<group>"; };
+		C4F8FCA01DA4C6AF0068F767 /* JTCalendarPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTCalendarPageView.h; sourceTree = "<group>"; };
+		C4F8FCA11DA4C6AF0068F767 /* JTCalendarPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTCalendarPageView.m; sourceTree = "<group>"; };
+		C4F8FCA21DA4C6AF0068F767 /* JTCalendarScrollManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTCalendarScrollManager.h; sourceTree = "<group>"; };
+		C4F8FCA31DA4C6AF0068F767 /* JTCalendarScrollManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTCalendarScrollManager.m; sourceTree = "<group>"; };
+		C4F8FCA41DA4C6AF0068F767 /* JTCalendarSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTCalendarSettings.h; sourceTree = "<group>"; };
+		C4F8FCA51DA4C6AF0068F767 /* JTCalendarSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTCalendarSettings.m; sourceTree = "<group>"; };
+		C4F8FCA61DA4C6AF0068F767 /* JTCalendarWeek.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTCalendarWeek.h; sourceTree = "<group>"; };
+		C4F8FCA71DA4C6AF0068F767 /* JTCalendarWeekDay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTCalendarWeekDay.h; sourceTree = "<group>"; };
+		C4F8FCA81DA4C6AF0068F767 /* JTCalendarWeekDayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTCalendarWeekDayView.h; sourceTree = "<group>"; };
+		C4F8FCA91DA4C6AF0068F767 /* JTCalendarWeekDayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTCalendarWeekDayView.m; sourceTree = "<group>"; };
+		C4F8FCAA1DA4C6AF0068F767 /* JTCalendarWeekView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTCalendarWeekView.h; sourceTree = "<group>"; };
+		C4F8FCAB1DA4C6AF0068F767 /* JTCalendarWeekView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTCalendarWeekView.m; sourceTree = "<group>"; };
+		C4F8FCAC1DA4C6AF0068F767 /* JTContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTContent.h; sourceTree = "<group>"; };
+		C4F8FCAD1DA4C6AF0068F767 /* JTDateHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTDateHelper.h; sourceTree = "<group>"; };
+		C4F8FCAE1DA4C6AF0068F767 /* JTDateHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTDateHelper.m; sourceTree = "<group>"; };
+		C4F8FCAF1DA4C6AF0068F767 /* JTHorizontalCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTHorizontalCalendarView.h; sourceTree = "<group>"; };
+		C4F8FCB01DA4C6AF0068F767 /* JTHorizontalCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTHorizontalCalendarView.m; sourceTree = "<group>"; };
+		C4F8FCB11DA4C6AF0068F767 /* JTMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTMenu.h; sourceTree = "<group>"; };
+		C4F8FCB21DA4C6AF0068F767 /* JTVerticalCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTVerticalCalendarView.h; sourceTree = "<group>"; };
+		C4F8FCB31DA4C6AF0068F767 /* JTVerticalCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTVerticalCalendarView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		C405988E1DF185E4005BEB47 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C40598961DF185E4005BEB47 /* UserNotificationsUI.framework in Frameworks */,
+				C40598941DF185E4005BEB47 /* UserNotifications.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C42E9E131E0D65AC0042E07F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C42E9E181E0D65AD0042E07F /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C4492DB71D9151DE00CF5D7C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -76,12 +452,77 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C405988C1DF18416005BEB47 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C4A080221E5D344F00B6C628 /* CWExtensions.swift */,
+				C423AD061E6506310027D021 /* UIDeviceExtension.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		C40598921DF185E4005BEB47 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C40598931DF185E4005BEB47 /* UserNotifications.framework */,
+				C40598951DF185E4005BEB47 /* UserNotificationsUI.framework */,
+				C42E9E171E0D65AD0042E07F /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C40598971DF185E4005BEB47 /* NotifContentExtension */ = {
+			isa = PBXGroup;
+			children = (
+				C42E9E271E0D66800042E07F /* NotifContentExtension.entitlements */,
+				C40598981DF185E4005BEB47 /* NotificationViewController.swift */,
+				C405989D1DF185E4005BEB47 /* Info.plist */,
+				C4819A9F1E635C6E0082F137 /* Notification.storyboard */,
+			);
+			path = NotifContentExtension;
+			sourceTree = "<group>";
+		};
+		C41BCA6A1DD8A71B0091BD5C /* CoreDataServices */ = {
+			isa = PBXGroup;
+			children = (
+				C41BCA6B1DD8A7450091BD5C /* CoreService.swift */,
+			);
+			name = CoreDataServices;
+			sourceTree = "<group>";
+		};
+		C423AD081E65858E0027D021 /* iRate */ = {
+			isa = PBXGroup;
+			children = (
+				C423AD091E65858E0027D021 /* Info.plist */,
+				C423AD0A1E65858E0027D021 /* iRate.bundle */,
+				C423AD0B1E65858E0027D021 /* iRate.h */,
+				C423AD0C1E65858E0027D021 /* iRate.m */,
+			);
+			path = iRate;
+			sourceTree = "<group>";
+		};
+		C42E9E191E0D65AD0042E07F /* Schedule+Today */ = {
+			isa = PBXGroup;
+			children = (
+				C46EB42A1E3FEDFD0090C91F /* Schedule+Today.entitlements */,
+				C42E9E1A1E0D65AE0042E07F /* TodayViewController.swift */,
+				C42E9E1C1E0D65AF0042E07F /* MainInterface.storyboard */,
+				C42E9E1F1E0D65B10042E07F /* Info.plist */,
+				C42E9E2F1E0D68050042E07F /* TodayCells.swift */,
+				C42E9E301E0D68050042E07F /* TodayCells.xib */,
+			);
+			path = "Schedule+Today";
+			sourceTree = "<group>";
+		};
 		C4492DB11D9151DE00CF5D7C = {
 			isa = PBXGroup;
 			children = (
 				C4492DBC1D9151DE00CF5D7C /* CWShedule+ */,
 				C4492DD41D9151DE00CF5D7C /* CWShedule+Tests */,
 				C4492DDF1D9151DE00CF5D7C /* CWShedule+UITests */,
+				C40598971DF185E4005BEB47 /* NotifContentExtension */,
+				C42E9E191E0D65AD0042E07F /* Schedule+Today */,
+				C40598921DF185E4005BEB47 /* Frameworks */,
 				C4492DBB1D9151DE00CF5D7C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -92,6 +533,8 @@
 				C4492DBA1D9151DE00CF5D7C /* CWShedule+.app */,
 				C4492DD11D9151DE00CF5D7C /* CWShedule+Tests.xctest */,
 				C4492DDC1D9151DE00CF5D7C /* CWShedule+UITests.xctest */,
+				C40598911DF185E4005BEB47 /* NotifContentExtension.appex */,
+				C42E9E161E0D65AC0042E07F /* Schedule+Today.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,13 +542,26 @@
 		C4492DBC1D9151DE00CF5D7C /* CWShedule+ */ = {
 			isa = PBXGroup;
 			children = (
-				C4492DBD1D9151DE00CF5D7C /* AppDelegate.swift */,
-				C4492DBF1D9151DE00CF5D7C /* ViewController.swift */,
-				C4492DC11D9151DE00CF5D7C /* Main.storyboard */,
-				C4492DC71D9151DE00CF5D7C /* Assets.xcassets */,
+				C42E9E261E0D65E30042E07F /* CWShedule+.entitlements */,
+				C405988C1DF18416005BEB47 /* Extensions */,
+				C41BCA6A1DD8A71B0091BD5C /* CoreDataServices */,
+				C4F8FC671DA4C5F00068F767 /* OBJ_C_SOURCE */,
+				C4492DF01D91798700CF5D7C /* Model */,
+				C4492DEF1D91798300CF5D7C /* View */,
+				C4492DEE1D91797D00CF5D7C /* Controller */,
+				C4492DBD1D9151DE00CF5D7C /*  AppDelegate.swift */,
+				C4B7DC2B1E67D65F00DD76F8 /* Main.storyboard */,
+				C42A4FE71E468736008D19ED /* 3x 2.jpg */,
+				C42E9E291E0D67D00042E07F /* CoredataStack.swift */,
+				C42E9E2A1E0D67D00042E07F /* PersistentContainer.swift */,
+				C44931B41E468BD200265D71 /* launch.jpg */,
 				C4492DC91D9151DE00CF5D7C /* LaunchScreen.storyboard */,
+				C4492DF21D9179AD00CF5D7C /* Utils */,
 				C4492DCC1D9151DE00CF5D7C /* Info.plist */,
+				C4492DF11D9179A200CF5D7C /* Resources */,
 				C4492DC41D9151DE00CF5D7C /* CWShedule_.xcdatamodeld */,
+				C4D0437A1E0DEBF100ACA5C6 /* PasscodeNotif.swift */,
+				C40C3D2D1E181CA2006D4F7D /* CWSharedAccess.swift */,
 			);
 			path = "CWShedule+";
 			sourceTree = "<group>";
@@ -128,9 +584,263 @@
 			path = "CWShedule+UITests";
 			sourceTree = "<group>";
 		};
+		C4492DEE1D91797D00CF5D7C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C4C16DEB1E19A9AF0045C836 /* PageViewTutControllers */,
+				C4492E091D917B8400CF5D7C /* SheduleGroupVC.swift */,
+				C4492E361D9221A200CF5D7C /* ScheduleGroupDetail.swift */,
+				C4492E391D925D1F00CF5D7C /* ScheduleItemVC.swift */,
+				C47FB7181D936C76007C601A /* AddScheduleItemVC.swift */,
+				C4F152521DA1465E00D6AB72 /* HomeVC.swift */,
+				C4F8FC651DA4C5B30068F767 /* CalenderVC.swift */,
+				C42701A51DAB0DB5006A5CE3 /* AllScheduleVC.swift */,
+				C46D91501E0DCC140097E8F6 /* PasscodeVC.swift */,
+				C4D0437C1E0DFC1000ACA5C6 /* SettingsVC.swift */,
+				C488019A1E13E34F00DC4614 /* GoupSelectionVC.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		C4492DEF1D91798300CF5D7C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C4819A591E6230EB0082F137 /* Source */,
+				C41CCDBB1E61D63C009F410D /* MaterialTextField.swift */,
+				C48801961E11B48000DC4614 /* Animations */,
+				C42E9E411E0D78930042E07F /* FoldingCell.swift */,
+				C4089EC61DA004BA00D4729F /* MGSwipeButton.h */,
+				C4089EC71DA004BA00D4729F /* MGSwipeButton.m */,
+				C4089EC81DA004BA00D4729F /* MGSwipeTableCell.h */,
+				C4089EC91DA004BA00D4729F /* MGSwipeTableCell.m */,
+				C4492E321D9193C500CF5D7C /* DesignableView.swift */,
+				C4492E341D9198AE00CF5D7C /* SheduleGroupCell.swift */,
+				C446BAA01D92924600EBF015 /* ScheduleItemCell.swift */,
+				C47FB71E1D93C4AD007C601A /* BlurrableView.swift */,
+				C47FB7201D94782B007C601A /* RepeatCells.swift */,
+				C4F152901DA1A76300D6AB72 /* UpcomingCells.swift */,
+				C41730111DA6934600BCFF5B /* CalenderCells.swift */,
+				C4B741B91DAB6BDB00CB3F99 /* AllScheduleCells.swift */,
+				C4A497BC1DD2A3050076A77B /* ButtonView.swift */,
+				C494F9731E1039FB00FB475A /* FoldAllScheduleCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		C4492DF01D91798700CF5D7C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C4492DF61D917AC900CF5D7C /* ScheduleDetails+CoreDataProperties.swift */,
+				C4492DF81D917AC900CF5D7C /* SheduleGroup+CoreDataProperties.swift */,
+				C4492DFA1D917AC900CF5D7C /* ScheduleImages+CoreDataProperties.swift */,
+				C4492DFC1D917AC900CF5D7C /* SheduleItem+CoreDataProperties.swift */,
+				C4492DFE1D917AC900CF5D7C /* ScheduleUrgency+CoreDataProperties.swift */,
+				C4492E0B1D917BA600CF5D7C /* Generated */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		C4492DF11D9179A200CF5D7C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C4492E0C1D91828100CF5D7C /* Roboto-Black.ttf */,
+				C4492E0D1D91828100CF5D7C /* Roboto-BlackItalic.ttf */,
+				C4492E0E1D91828100CF5D7C /* Roboto-Bold.ttf */,
+				C4492E0F1D91828100CF5D7C /* Roboto-BoldItalic.ttf */,
+				C4492E101D91828100CF5D7C /* Roboto-Italic.ttf */,
+				C4492E111D91828100CF5D7C /* Roboto-Light.ttf */,
+				C4492E121D91828100CF5D7C /* Roboto-LightItalic.ttf */,
+				C4492E131D91828100CF5D7C /* Roboto-Medium.ttf */,
+				C4492E141D91828100CF5D7C /* Roboto-MediumItalic.ttf */,
+				C4492E151D91828100CF5D7C /* Roboto-Regular.ttf */,
+				C4492E161D91828100CF5D7C /* Roboto-Thin.ttf */,
+				C4492E171D91828100CF5D7C /* Roboto-ThinItalic.ttf */,
+				C4492E181D91828100CF5D7C /* RobotoCondensed-Bold.ttf */,
+				C4492E191D91828100CF5D7C /* RobotoCondensed-BoldItalic.ttf */,
+				C4492E1A1D91828100CF5D7C /* RobotoCondensed-Italic.ttf */,
+				C4492E1B1D91828100CF5D7C /* RobotoCondensed-Light.ttf */,
+				C4492E1C1D91828100CF5D7C /* RobotoCondensed-LightItalic.ttf */,
+				C4492E1D1D91828100CF5D7C /* RobotoCondensed-Regular.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		C4492DF21D9179AD00CF5D7C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C423AD081E65858E0027D021 /* iRate */,
+				C4B72BA01DC5462500553E9C /* CWVoiceRecognition.swift */,
+				C4492DF31D9179CA00CF5D7C /* Constants.swift */,
+				C45B59551DB00271000EF583 /* ScheduleNotificatios.swift */,
+				C4B72BA21DC62D6A00553E9C /* CWScheduleStats.swift */,
+				C484FF641DC656D500214F11 /* SpeechTranscription.swift */,
+				C44AB9CD1E52665D005171CC /* Reachability.h */,
+				C44AB9CE1E52665D005171CC /* Reachability.m */,
+				C44AB9D01E533E1B005171CC /* Assets.xcassets */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		C4492E0B1D917BA600CF5D7C /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				C4492DF51D917AC900CF5D7C /* ScheduleDetails+CoreDataClass.swift */,
+				C4492DF71D917AC900CF5D7C /* SheduleGroup+CoreDataClass.swift */,
+				C4492DF91D917AC900CF5D7C /* ScheduleImages+CoreDataClass.swift */,
+				C4492DFB1D917AC900CF5D7C /* SheduleItem+CoreDataClass.swift */,
+				C4492DFD1D917AC900CF5D7C /* ScheduleUrgency+CoreDataClass.swift */,
+			);
+			name = Generated;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		C4819A591E6230EB0082F137 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				C4819A5A1E6230EB0082F137 /* Constraint.swift */,
+				C4819A5B1E6230EB0082F137 /* ConstraintAttributes.swift */,
+				C4819A5C1E6230EB0082F137 /* ConstraintConfig.swift */,
+				C4819A5D1E6230EB0082F137 /* ConstraintConstantTarget.swift */,
+				C4819A5E1E6230EB0082F137 /* ConstraintDescription.swift */,
+				C4819A5F1E6230EB0082F137 /* ConstraintDSL.swift */,
+				C4819A601E6230EB0082F137 /* ConstraintInsets.swift */,
+				C4819A611E6230EB0082F137 /* ConstraintInsetTarget.swift */,
+				C4819A621E6230EB0082F137 /* ConstraintItem.swift */,
+				C4819A631E6230EB0082F137 /* ConstraintLayoutGuide+Extensions.swift */,
+				C4819A641E6230EB0082F137 /* ConstraintLayoutGuide.swift */,
+				C4819A651E6230EB0082F137 /* ConstraintLayoutGuideDSL.swift */,
+				C4819A661E6230EB0082F137 /* ConstraintLayoutSupport.swift */,
+				C4819A671E6230EB0082F137 /* ConstraintLayoutSupportDSL.swift */,
+				C4819A681E6230EB0082F137 /* ConstraintMaker.swift */,
+				C4819A691E6230EB0082F137 /* ConstraintMakerEditable.swift */,
+				C4819A6A1E6230EB0082F137 /* ConstraintMakerExtendable.swift */,
+				C4819A6B1E6230EB0082F137 /* ConstraintMakerFinalizable.swift */,
+				C4819A6C1E6230EB0082F137 /* ConstraintMakerPriortizable.swift */,
+				C4819A6D1E6230EB0082F137 /* ConstraintMakerRelatable.swift */,
+				C4819A6E1E6230EB0082F137 /* ConstraintMultiplierTarget.swift */,
+				C4819A6F1E6230EB0082F137 /* ConstraintOffsetTarget.swift */,
+				C4819A701E6230EB0082F137 /* ConstraintPriority.swift */,
+				C4819A711E6230EB0082F137 /* ConstraintPriorityTarget.swift */,
+				C4819A721E6230EB0082F137 /* ConstraintRelatableTarget.swift */,
+				C4819A731E6230EB0082F137 /* ConstraintRelation.swift */,
+				C4819A741E6230EB0082F137 /* ConstraintView+Extensions.swift */,
+				C4819A751E6230EB0082F137 /* ConstraintView.swift */,
+				C4819A761E6230EB0082F137 /* ConstraintViewDSL.swift */,
+				C4819A771E6230EB0082F137 /* Debugging.swift */,
+				C4819A781E6230EB0082F137 /* Info.plist */,
+				C4819A791E6230EB0082F137 /* LayoutConstraint.swift */,
+				C4819A7A1E6230EB0082F137 /* LayoutConstraintItem.swift */,
+				C4819A7B1E6230EB0082F137 /* SnapKit.h */,
+				C4819A7C1E6230EB0082F137 /* UILayoutSupport+Extensions.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		C48801961E11B48000DC4614 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				C41CCDBF1E620F62009F410D /* ArrayEx.swift */,
+				C41CCDC01E620F62009F410D /* CGPointEx.swift */,
+				C41CCDC11E620F62009F410D /* CGRectEx.swift */,
+				C41CCDC21E620F62009F410D /* LiquidFloatingActionButton.swift */,
+				C41CCDC31E620F62009F410D /* LiquidUtil.swift */,
+				C41CCDC41E620F62009F410D /* LiquittableCircle.swift */,
+				C41CCDC51E620F62009F410D /* SimpleCircleLiquidEngine.swift */,
+				C41CCDC61E620F62009F410D /* UIColorEx.swift */,
+			);
+			name = Animations;
+			sourceTree = "<group>";
+		};
+		C4C16DEB1E19A9AF0045C836 /* PageViewTutControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C4C16DEC1E19A9F80045C836 /* TutsVC.swift */,
+				C4C16DEE1E19AD630045C836 /* PageContentVC.h */,
+				C4C16DEF1E19AD630045C836 /* PageContentVC.m */,
+				C4B7DC291E67CBD600DD76F8 /* CWPageViewController.swift */,
+			);
+			name = PageViewTutControllers;
+			sourceTree = "<group>";
+		};
+		C4F8FC671DA4C5F00068F767 /* OBJ_C_SOURCE */ = {
+			isa = PBXGroup;
+			children = (
+				C4F8FC941DA4C6AF0068F767 /* JTCalendar.h */,
+				C4F8FC951DA4C6AF0068F767 /* JTCalendarDay.h */,
+				C4F8FC961DA4C6AF0068F767 /* JTCalendarDayView.h */,
+				C4F8FC971DA4C6AF0068F767 /* JTCalendarDayView.m */,
+				C4F8FC981DA4C6AF0068F767 /* JTCalendarDelegate.h */,
+				C4F8FC991DA4C6AF0068F767 /* JTCalendarDelegateManager.h */,
+				C4F8FC9A1DA4C6AF0068F767 /* JTCalendarDelegateManager.m */,
+				C4F8FC9B1DA4C6AF0068F767 /* JTCalendarManager.h */,
+				C4F8FC9C1DA4C6AF0068F767 /* JTCalendarManager.m */,
+				C4F8FC9D1DA4C6AF0068F767 /* JTCalendarMenuView.h */,
+				C4F8FC9E1DA4C6AF0068F767 /* JTCalendarMenuView.m */,
+				C4F8FC9F1DA4C6AF0068F767 /* JTCalendarPage.h */,
+				C4F8FCA01DA4C6AF0068F767 /* JTCalendarPageView.h */,
+				C4F8FCA11DA4C6AF0068F767 /* JTCalendarPageView.m */,
+				C4F8FCA21DA4C6AF0068F767 /* JTCalendarScrollManager.h */,
+				C4F8FCA31DA4C6AF0068F767 /* JTCalendarScrollManager.m */,
+				C4F8FCA41DA4C6AF0068F767 /* JTCalendarSettings.h */,
+				C4F8FCA51DA4C6AF0068F767 /* JTCalendarSettings.m */,
+				C4F8FCA61DA4C6AF0068F767 /* JTCalendarWeek.h */,
+				C4F8FCA71DA4C6AF0068F767 /* JTCalendarWeekDay.h */,
+				C4F8FCA81DA4C6AF0068F767 /* JTCalendarWeekDayView.h */,
+				C4F8FCA91DA4C6AF0068F767 /* JTCalendarWeekDayView.m */,
+				C4F8FCAA1DA4C6AF0068F767 /* JTCalendarWeekView.h */,
+				C4F8FCAB1DA4C6AF0068F767 /* JTCalendarWeekView.m */,
+				C4F8FCAC1DA4C6AF0068F767 /* JTContent.h */,
+				C4F8FCAD1DA4C6AF0068F767 /* JTDateHelper.h */,
+				C4F8FCAE1DA4C6AF0068F767 /* JTDateHelper.m */,
+				C4F8FCAF1DA4C6AF0068F767 /* JTHorizontalCalendarView.h */,
+				C4F8FCB01DA4C6AF0068F767 /* JTHorizontalCalendarView.m */,
+				C4F8FCB11DA4C6AF0068F767 /* JTMenu.h */,
+				C4F8FCB21DA4C6AF0068F767 /* JTVerticalCalendarView.h */,
+				C4F8FCB31DA4C6AF0068F767 /* JTVerticalCalendarView.m */,
+				C48801971E1323FD00DC4614 /* KeychainWrapper.h */,
+				C48801981E1323FD00DC4614 /* KeychainWrapper.m */,
+				C4089EC51DA004B900D4729F /* CWShedule+-Bridging-Header.h */,
+			);
+			name = OBJ_C_SOURCE;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		C40598901DF185E4005BEB47 /* NotifContentExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C40598A11DF185E4005BEB47 /* Build configuration list for PBXNativeTarget "NotifContentExtension" */;
+			buildPhases = (
+				C405988D1DF185E4005BEB47 /* Sources */,
+				C405988E1DF185E4005BEB47 /* Frameworks */,
+				C405988F1DF185E4005BEB47 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NotifContentExtension;
+			productName = NotifContentExtension;
+			productReference = C40598911DF185E4005BEB47 /* NotifContentExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		C42E9E151E0D65AC0042E07F /* Schedule+Today */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C42E9E251E0D65B10042E07F /* Build configuration list for PBXNativeTarget "Schedule+Today" */;
+			buildPhases = (
+				C42E9E121E0D65AC0042E07F /* Sources */,
+				C42E9E131E0D65AC0042E07F /* Frameworks */,
+				C42E9E141E0D65AC0042E07F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Schedule+Today";
+			productName = "Schedule+Today";
+			productReference = C42E9E161E0D65AC0042E07F /* Schedule+Today.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		C4492DB91D9151DE00CF5D7C /* CWShedule+ */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C4492DE51D9151DE00CF5D7C /* Build configuration list for PBXNativeTarget "CWShedule+" */;
@@ -138,10 +848,13 @@
 				C4492DB61D9151DE00CF5D7C /* Sources */,
 				C4492DB71D9151DE00CF5D7C /* Frameworks */,
 				C4492DB81D9151DE00CF5D7C /* Resources */,
+				C40598A41DF185E4005BEB47 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				C405989F1DF185E4005BEB47 /* PBXTargetDependency */,
+				C42E9E211E0D65B10042E07F /* PBXTargetDependency */,
 			);
 			name = "CWShedule+";
 			productName = "CWShedule+";
@@ -190,24 +903,56 @@
 		C4492DB21D9151DE00CF5D7C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Mensah Shadrach";
 				TargetAttributes = {
+					C40598901DF185E4005BEB47 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = MB46J93Q7Z;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					C42E9E151E0D65AC0042E07F = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = MB46J93Q7Z;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					C4492DB91D9151DE00CF5D7C = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = H6689YLYP3;
+						DevelopmentTeam = MB46J93Q7Z;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 0;
+							};
+						};
 					};
 					C4492DD01D9151DE00CF5D7C = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = H6689YLYP3;
+						DevelopmentTeam = MB46J93Q7Z;
 						ProvisioningStyle = Automatic;
 						TestTargetID = C4492DB91D9151DE00CF5D7C;
 					};
 					C4492DDB1D9151DE00CF5D7C = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = H6689YLYP3;
+						DevelopmentTeam = MB46J93Q7Z;
 						ProvisioningStyle = Automatic;
 						TestTargetID = C4492DB91D9151DE00CF5D7C;
 					};
@@ -229,18 +974,63 @@
 				C4492DB91D9151DE00CF5D7C /* CWShedule+ */,
 				C4492DD01D9151DE00CF5D7C /* CWShedule+Tests */,
 				C4492DDB1D9151DE00CF5D7C /* CWShedule+UITests */,
+				C40598901DF185E4005BEB47 /* NotifContentExtension */,
+				C42E9E151E0D65AC0042E07F /* Schedule+Today */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		C405988F1DF185E4005BEB47 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C44AB9D21E533E1B005171CC /* Assets.xcassets in Resources */,
+				C4819AA01E635C6E0082F137 /* Notification.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C42E9E141E0D65AC0042E07F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C42E9E1E1E0D65AF0042E07F /* MainInterface.storyboard in Resources */,
+				C44AB9D31E533E1B005171CC /* Assets.xcassets in Resources */,
+				C42E9E341E0D68050042E07F /* TodayCells.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C4492DB81D9151DE00CF5D7C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4492E291D91828100CF5D7C /* Roboto-ThinItalic.ttf in Resources */,
+				C42A4FE81E468736008D19ED /* 3x 2.jpg in Resources */,
+				C4492E281D91828100CF5D7C /* Roboto-Thin.ttf in Resources */,
+				C4492E2E1D91828100CF5D7C /* RobotoCondensed-LightItalic.ttf in Resources */,
+				C44931B51E468BD200265D71 /* launch.jpg in Resources */,
+				C423AD0E1E65858E0027D021 /* iRate.bundle in Resources */,
+				C4B7DC2C1E67D65F00DD76F8 /* Main.storyboard in Resources */,
 				C4492DCB1D9151DE00CF5D7C /* LaunchScreen.storyboard in Resources */,
-				C4492DC81D9151DE00CF5D7C /* Assets.xcassets in Resources */,
-				C4492DC31D9151DE00CF5D7C /* Main.storyboard in Resources */,
+				C4492E2B1D91828100CF5D7C /* RobotoCondensed-BoldItalic.ttf in Resources */,
+				C4492E2C1D91828100CF5D7C /* RobotoCondensed-Italic.ttf in Resources */,
+				C4492E241D91828100CF5D7C /* Roboto-LightItalic.ttf in Resources */,
+				C4492E201D91828100CF5D7C /* Roboto-Bold.ttf in Resources */,
+				C4492E2F1D91828100CF5D7C /* RobotoCondensed-Regular.ttf in Resources */,
+				C4492E2D1D91828100CF5D7C /* RobotoCondensed-Light.ttf in Resources */,
+				C4819A9B1E6230EB0082F137 /* Info.plist in Resources */,
+				C423AD0D1E65858E0027D021 /* Info.plist in Resources */,
+				C4492E261D91828100CF5D7C /* Roboto-MediumItalic.ttf in Resources */,
+				C4492E1F1D91828100CF5D7C /* Roboto-BlackItalic.ttf in Resources */,
+				C4492E221D91828100CF5D7C /* Roboto-Italic.ttf in Resources */,
+				C4492E2A1D91828100CF5D7C /* RobotoCondensed-Bold.ttf in Resources */,
+				C44AB9D11E533E1B005171CC /* Assets.xcassets in Resources */,
+				C4492E211D91828100CF5D7C /* Roboto-BoldItalic.ttf in Resources */,
+				C4492E251D91828100CF5D7C /* Roboto-Medium.ttf in Resources */,
+				C4492E271D91828100CF5D7C /* Roboto-Regular.ttf in Resources */,
+				C4492E1E1D91828100CF5D7C /* Roboto-Black.ttf in Resources */,
+				C4492E231D91828100CF5D7C /* Roboto-Light.ttf in Resources */,
+				C42E9E331E0D68050042E07F /* TodayCells.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,13 +1051,152 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		C405988D1DF185E4005BEB47 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C40598991DF185E4005BEB47 /* NotificationViewController.swift in Sources */,
+				C431FA111DF25EEA00E464B6 /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C42E9E121E0D65AC0042E07F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C40C3D2F1E181CA2006D4F7D /* CWSharedAccess.swift in Sources */,
+				C42E9E3F1E0D68E70042E07F /* CWShedule_.xcdatamodeld in Sources */,
+				C42E9E1B1E0D65AE0042E07F /* TodayViewController.swift in Sources */,
+				C42E9E391E0D688F0042E07F /* ScheduleUrgency+CoreDataProperties.swift in Sources */,
+				C42E9E3E1E0D68AD0042E07F /* ScheduleUrgency+CoreDataClass.swift in Sources */,
+				C42E9E3B1E0D68AD0042E07F /* SheduleGroup+CoreDataClass.swift in Sources */,
+				C42E9E3D1E0D68AD0042E07F /* SheduleItem+CoreDataClass.swift in Sources */,
+				C42E9E351E0D688F0042E07F /* ScheduleDetails+CoreDataProperties.swift in Sources */,
+				C42E9E3C1E0D68AD0042E07F /* ScheduleImages+CoreDataClass.swift in Sources */,
+				C42E9E3A1E0D68AD0042E07F /* ScheduleDetails+CoreDataClass.swift in Sources */,
+				C42E9E2C1E0D67D00042E07F /* CoredataStack.swift in Sources */,
+				C42E9E381E0D688F0042E07F /* SheduleItem+CoreDataProperties.swift in Sources */,
+				C42E9E371E0D688F0042E07F /* ScheduleImages+CoreDataProperties.swift in Sources */,
+				C42E9E2E1E0D67D00042E07F /* PersistentContainer.swift in Sources */,
+				C42E9E361E0D688F0042E07F /* SheduleGroup+CoreDataProperties.swift in Sources */,
+				C42E9E401E0D6AC70042E07F /* ScheduleNotificatios.swift in Sources */,
+				C42E9E321E0D68050042E07F /* TodayCells.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C4492DB61D9151DE00CF5D7C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4492E3A1D925D1F00CF5D7C /* ScheduleItemVC.swift in Sources */,
+				C4819A7E1E6230EB0082F137 /* ConstraintAttributes.swift in Sources */,
+				C4089ECB1DA004BA00D4729F /* MGSwipeTableCell.m in Sources */,
+				C4819A801E6230EB0082F137 /* ConstraintConstantTarget.swift in Sources */,
+				C4A497BD1DD2A3050076A77B /* ButtonView.swift in Sources */,
+				C4B741BA1DAB6BDB00CB3F99 /* AllScheduleCells.swift in Sources */,
+				C4819A8B1E6230EB0082F137 /* ConstraintMaker.swift in Sources */,
+				C4492E041D917AC900CF5D7C /* ScheduleImages+CoreDataProperties.swift in Sources */,
+				C4F8FCBF1DA4C6AF0068F767 /* JTVerticalCalendarView.m in Sources */,
+				C41BCA6C1DD8A7450091BD5C /* CoreService.swift in Sources */,
 				C4492DC61D9151DE00CF5D7C /* CWShedule_.xcdatamodeld in Sources */,
-				C4492DC01D9151DE00CF5D7C /* ViewController.swift in Sources */,
-				C4492DBE1D9151DE00CF5D7C /* AppDelegate.swift in Sources */,
+				C4492E031D917AC900CF5D7C /* ScheduleImages+CoreDataClass.swift in Sources */,
+				C446BAA11D92924600EBF015 /* ScheduleItemCell.swift in Sources */,
+				C4089ECA1DA004BA00D4729F /* MGSwipeButton.m in Sources */,
+				C4F8FCB41DA4C6AF0068F767 /* JTCalendarDayView.m in Sources */,
+				C4819A8A1E6230EB0082F137 /* ConstraintLayoutSupportDSL.swift in Sources */,
+				C4492E071D917AC900CF5D7C /* ScheduleUrgency+CoreDataClass.swift in Sources */,
+				C4819A7F1E6230EB0082F137 /* ConstraintConfig.swift in Sources */,
+				C4819A891E6230EB0082F137 /* ConstraintLayoutSupport.swift in Sources */,
+				C4819A911E6230EB0082F137 /* ConstraintMultiplierTarget.swift in Sources */,
+				C4819A961E6230EB0082F137 /* ConstraintRelation.swift in Sources */,
+				C4F8FCB91DA4C6AF0068F767 /* JTCalendarScrollManager.m in Sources */,
+				C4B72BA11DC5462500553E9C /* CWVoiceRecognition.swift in Sources */,
+				C4819A9D1E6230EB0082F137 /* LayoutConstraintItem.swift in Sources */,
+				C4819A921E6230EB0082F137 /* ConstraintOffsetTarget.swift in Sources */,
+				C4F8FCBC1DA4C6AF0068F767 /* JTCalendarWeekView.m in Sources */,
+				C4819A901E6230EB0082F137 /* ConstraintMakerRelatable.swift in Sources */,
+				C4D0437B1E0DEBF100ACA5C6 /* PasscodeNotif.swift in Sources */,
+				C4819A981E6230EB0082F137 /* ConstraintView.swift in Sources */,
+				C4819A871E6230EB0082F137 /* ConstraintLayoutGuide.swift in Sources */,
+				C484FF651DC656D500214F11 /* SpeechTranscription.swift in Sources */,
+				C42E9E421E0D78930042E07F /* FoldingCell.swift in Sources */,
+				C4492E021D917AC900CF5D7C /* SheduleGroup+CoreDataProperties.swift in Sources */,
+				C4C16DED1E19A9F80045C836 /* TutsVC.swift in Sources */,
+				C4492E081D917AC900CF5D7C /* ScheduleUrgency+CoreDataProperties.swift in Sources */,
+				C41CCDBC1E61D63C009F410D /* MaterialTextField.swift in Sources */,
+				C41CCDC81E620F62009F410D /* CGPointEx.swift in Sources */,
+				C4492E011D917AC900CF5D7C /* SheduleGroup+CoreDataClass.swift in Sources */,
+				C4492DBE1D9151DE00CF5D7C /*  AppDelegate.swift in Sources */,
+				C4819A851E6230EB0082F137 /* ConstraintItem.swift in Sources */,
+				C4492E371D9221A200CF5D7C /* ScheduleGroupDetail.swift in Sources */,
+				C4F8FCBE1DA4C6AF0068F767 /* JTHorizontalCalendarView.m in Sources */,
+				C4819A881E6230EB0082F137 /* ConstraintLayoutGuideDSL.swift in Sources */,
+				C4819A931E6230EB0082F137 /* ConstraintPriority.swift in Sources */,
+				C4819A991E6230EB0082F137 /* ConstraintViewDSL.swift in Sources */,
+				C4819A8C1E6230EB0082F137 /* ConstraintMakerEditable.swift in Sources */,
+				C4492E351D9198AE00CF5D7C /* SheduleGroupCell.swift in Sources */,
+				C47FB7191D936C76007C601A /* AddScheduleItemVC.swift in Sources */,
+				C4819A8D1E6230EB0082F137 /* ConstraintMakerExtendable.swift in Sources */,
+				C4492E331D9193C500CF5D7C /* DesignableView.swift in Sources */,
+				C4F8FCB71DA4C6AF0068F767 /* JTCalendarMenuView.m in Sources */,
+				C4492E001D917AC900CF5D7C /* ScheduleDetails+CoreDataProperties.swift in Sources */,
+				C41730121DA6934600BCFF5B /* CalenderCells.swift in Sources */,
+				C4F8FCB51DA4C6AF0068F767 /* JTCalendarDelegateManager.m in Sources */,
+				C4819A831E6230EB0082F137 /* ConstraintInsets.swift in Sources */,
+				C42E9E311E0D68050042E07F /* TodayCells.swift in Sources */,
+				C41CCDCD1E620F62009F410D /* SimpleCircleLiquidEngine.swift in Sources */,
+				C4A080231E5D344F00B6C628 /* CWExtensions.swift in Sources */,
+				C42701A61DAB0DB5006A5CE3 /* AllScheduleVC.swift in Sources */,
+				C44AB9CF1E52665D005171CC /* Reachability.m in Sources */,
+				C4F8FCBB1DA4C6AF0068F767 /* JTCalendarWeekDayView.m in Sources */,
+				C4819A941E6230EB0082F137 /* ConstraintPriorityTarget.swift in Sources */,
+				C4819A8F1E6230EB0082F137 /* ConstraintMakerPriortizable.swift in Sources */,
+				C4819A9C1E6230EB0082F137 /* LayoutConstraint.swift in Sources */,
+				C41CCDC91E620F62009F410D /* CGRectEx.swift in Sources */,
+				C42E9E2B1E0D67D00042E07F /* CoredataStack.swift in Sources */,
+				C4492E0A1D917B8400CF5D7C /* SheduleGroupVC.swift in Sources */,
+				C4B72BA31DC62D6B00553E9C /* CWScheduleStats.swift in Sources */,
+				C47FB71F1D93C4AD007C601A /* BlurrableView.swift in Sources */,
+				C47FB7211D94782B007C601A /* RepeatCells.swift in Sources */,
+				C45B59561DB00271000EF583 /* ScheduleNotificatios.swift in Sources */,
+				C4819A951E6230EB0082F137 /* ConstraintRelatableTarget.swift in Sources */,
+				C41CCDCA1E620F62009F410D /* LiquidFloatingActionButton.swift in Sources */,
+				C4819A861E6230EB0082F137 /* ConstraintLayoutGuide+Extensions.swift in Sources */,
+				C4492DFF1D917AC900CF5D7C /* ScheduleDetails+CoreDataClass.swift in Sources */,
+				C4819A971E6230EB0082F137 /* ConstraintView+Extensions.swift in Sources */,
+				C4F152531DA1465E00D6AB72 /* HomeVC.swift in Sources */,
+				C4492DF41D9179CA00CF5D7C /* Constants.swift in Sources */,
+				C40C3D2E1E181CA2006D4F7D /* CWSharedAccess.swift in Sources */,
+				C41CCDC71E620F62009F410D /* ArrayEx.swift in Sources */,
+				C423AD071E6506310027D021 /* UIDeviceExtension.swift in Sources */,
+				C4819A8E1E6230EB0082F137 /* ConstraintMakerFinalizable.swift in Sources */,
+				C41CCDCC1E620F62009F410D /* LiquittableCircle.swift in Sources */,
+				C494F9741E1039FB00FB475A /* FoldAllScheduleCell.swift in Sources */,
+				C4B7DC2A1E67CBD600DD76F8 /* CWPageViewController.swift in Sources */,
+				C4F8FCBD1DA4C6AF0068F767 /* JTDateHelper.m in Sources */,
+				C46D91511E0DCC140097E8F6 /* PasscodeVC.swift in Sources */,
+				C4819A821E6230EB0082F137 /* ConstraintDSL.swift in Sources */,
+				C4C16DF01E19AD630045C836 /* PageContentVC.m in Sources */,
+				C4819A9A1E6230EB0082F137 /* Debugging.swift in Sources */,
+				C4819A811E6230EB0082F137 /* ConstraintDescription.swift in Sources */,
+				C431FA0C1DF1C09300E464B6 /* NotificationViewController.swift in Sources */,
+				C4D0437D1E0DFC1000ACA5C6 /* SettingsVC.swift in Sources */,
+				C41CCDCE1E620F62009F410D /* UIColorEx.swift in Sources */,
+				C41CCDCB1E620F62009F410D /* LiquidUtil.swift in Sources */,
+				C42E9E2D1E0D67D00042E07F /* PersistentContainer.swift in Sources */,
+				C4492E051D917AC900CF5D7C /* SheduleItem+CoreDataClass.swift in Sources */,
+				C4819A7D1E6230EB0082F137 /* Constraint.swift in Sources */,
+				C48801991E1323FD00DC4614 /* KeychainWrapper.m in Sources */,
+				C4492E061D917AC900CF5D7C /* SheduleItem+CoreDataProperties.swift in Sources */,
+				C423AD0F1E65858E0027D021 /* iRate.m in Sources */,
+				C488019B1E13E35000DC4614 /* GoupSelectionVC.swift in Sources */,
+				C4F8FCB61DA4C6AF0068F767 /* JTCalendarManager.m in Sources */,
+				C4F8FCBA1DA4C6AF0068F767 /* JTCalendarSettings.m in Sources */,
+				C4F8FC661DA4C5B30068F767 /* CalenderVC.swift in Sources */,
+				C4819A9E1E6230EB0082F137 /* UILayoutSupport+Extensions.swift in Sources */,
+				C4819A841E6230EB0082F137 /* ConstraintInsetTarget.swift in Sources */,
+				C4F152911DA1A76300D6AB72 /* UpcomingCells.swift in Sources */,
+				C4F8FCB81DA4C6AF0068F767 /* JTCalendarPageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,6 +1219,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		C405989F1DF185E4005BEB47 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C40598901DF185E4005BEB47 /* NotifContentExtension */;
+			targetProxy = C405989E1DF185E4005BEB47 /* PBXContainerItemProxy */;
+		};
+		C42E9E211E0D65B10042E07F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C42E9E151E0D65AC0042E07F /* Schedule+Today */;
+			targetProxy = C42E9E201E0D65B10042E07F /* PBXContainerItemProxy */;
+		};
 		C4492DD31D9151DE00CF5D7C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C4492DB91D9151DE00CF5D7C /* CWShedule+ */;
@@ -303,12 +1242,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		C4492DC11D9151DE00CF5D7C /* Main.storyboard */ = {
+		C42E9E1C1E0D65AF0042E07F /* MainInterface.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				C4492DC21D9151DE00CF5D7C /* Base */,
+				C42E9E1D1E0D65AF0042E07F /* Base */,
 			);
-			name = Main.storyboard;
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 		C4492DC91D9151DE00CF5D7C /* LaunchScreen.storyboard */ = {
@@ -322,6 +1261,66 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		C40598A21DF185E4005BEB47 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = NotifContentExtension/NotifContentExtension.entitlements;
+				DEVELOPMENT_TEAM = MB46J93Q7Z;
+				INFOPLIST_FILE = NotifContentExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.codesworth.CWShedules.NotifContentExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		C40598A31DF185E4005BEB47 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = NotifContentExtension/NotifContentExtension.entitlements;
+				DEVELOPMENT_TEAM = MB46J93Q7Z;
+				INFOPLIST_FILE = NotifContentExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.codesworth.CWShedules.NotifContentExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		C42E9E231E0D65B10042E07F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Schedule+Today/Schedule+Today.entitlements";
+				DEVELOPMENT_TEAM = MB46J93Q7Z;
+				INFOPLIST_FILE = "Schedule+Today/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.codesworth.CWShedules.Schedule-Today";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		C42E9E241E0D65B10042E07F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Schedule+Today/Schedule+Today.entitlements";
+				DEVELOPMENT_TEAM = MB46J93Q7Z;
+				INFOPLIST_FILE = "Schedule+Today/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.codesworth.CWShedules.Schedule-Today";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		C4492DE31D9151DE00CF5D7C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -340,6 +1339,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -390,6 +1390,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -418,12 +1419,18 @@
 		C4492DE61D9151DE00CF5D7C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = H6689YLYP3;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "CWShedule+/CWShedule+.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = MB46J93Q7Z;
 				INFOPLIST_FILE = "CWShedule+/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Codesworth.CWShedule-";
+				PRODUCT_BUNDLE_IDENTIFIER = com.codesworth.CWShedules;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CWShedule+/CWShedule+-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -431,12 +1438,17 @@
 		C4492DE71D9151DE00CF5D7C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = H6689YLYP3;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "CWShedule+/CWShedule+.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = MB46J93Q7Z;
 				INFOPLIST_FILE = "CWShedule+/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Codesworth.CWShedule-";
+				PRODUCT_BUNDLE_IDENTIFIER = com.codesworth.CWShedules;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CWShedule+/CWShedule+-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -446,7 +1458,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = H6689YLYP3;
+				DEVELOPMENT_TEAM = MB46J93Q7Z;
 				INFOPLIST_FILE = "CWShedule+Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Codesworth.CWShedule-Tests";
@@ -461,7 +1473,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = H6689YLYP3;
+				DEVELOPMENT_TEAM = MB46J93Q7Z;
 				INFOPLIST_FILE = "CWShedule+Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Codesworth.CWShedule-Tests";
@@ -475,7 +1487,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = H6689YLYP3;
+				DEVELOPMENT_TEAM = MB46J93Q7Z;
 				INFOPLIST_FILE = "CWShedule+UITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Codesworth.CWShedule-UITests";
@@ -489,7 +1501,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = H6689YLYP3;
+				DEVELOPMENT_TEAM = MB46J93Q7Z;
 				INFOPLIST_FILE = "CWShedule+UITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Codesworth.CWShedule-UITests";
@@ -502,6 +1514,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C40598A11DF185E4005BEB47 /* Build configuration list for PBXNativeTarget "NotifContentExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C40598A21DF185E4005BEB47 /* Debug */,
+				C40598A31DF185E4005BEB47 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C42E9E251E0D65B10042E07F /* Build configuration list for PBXNativeTarget "Schedule+Today" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C42E9E231E0D65B10042E07F /* Debug */,
+				C42E9E241E0D65B10042E07F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C4492DB51D9151DE00CF5D7C /* Build configuration list for PBXProject "CWShedule+" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -518,6 +1548,7 @@
 				C4492DE71D9151DE00CF5D7C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C4492DE81D9151DE00CF5D7C /* Build configuration list for PBXNativeTarget "CWShedule+Tests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +1557,7 @@
 				C4492DEA1D9151DE00CF5D7C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C4492DEB1D9151DE00CF5D7C /* Build configuration list for PBXNativeTarget "CWShedule+UITests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +1566,7 @@
 				C4492DED1D9151DE00CF5D7C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
