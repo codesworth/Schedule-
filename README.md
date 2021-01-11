@@ -23,4 +23,8 @@ Make every day a success with Schedule+, it will make managing your life fun aga
 - Automatically remove completed schedule and delete schedules with group optionally.
 
 ## Screenshots
-
+![Screenshot 1](https://github.com/codesworth/Schedule-/blob/master/snapshots/1242x2208bb.png)
+![Screenshot 2](https://github.com/codesworth/Schedule-/blob/master/snapshots/1242x2208bb%20(1).png)
+![Screenshot 3](https://github.com/codesworth/Schedule-/blob/master/snapshots/1242x2208bb%20(2).png)
+![Screenshot 4](https://github.com/codesworth/Schedule-/blob/master/snapshots/1242x2208bb%20(3).png)
+![Screenshot 5](https://github.com/codesworth/Schedule-/blob/master/snapshots/1242x2208bb%20(4).png)
